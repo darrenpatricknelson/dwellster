@@ -28,3 +28,9 @@ FEAT: New feature - Navbar
     - Incomplete
     - Created a Navbar component
     - Created Navbar.module.css
+
+UPDATE: Updated layout and index.js
+    - Made updates to the layout.js component
+    - Made updates to index.js file
+        - Added a div container to house the navbar and main container
+    - Made updates to Home.module.css styles

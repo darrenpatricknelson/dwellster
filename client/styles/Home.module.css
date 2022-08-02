@@ -1,0 +1,7 @@
+/* home page */
+.container {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  border: 1px solid;
+}
