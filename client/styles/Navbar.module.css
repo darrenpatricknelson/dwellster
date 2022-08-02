@@ -1,0 +1,8 @@
+/* styles for the navbar */
+.navbar {
+  width: 200px;
+  height: 100%;
+  margin: 10px 10px 20px 25px;
+  border-radius: 1rem;
+  background-color: var(--peach);
+}
