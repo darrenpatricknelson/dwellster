@@ -1,0 +1,40 @@
+/* styles for the Header component */
+.header {
+  background-color: var(--aero-blue);
+  color: var(--smokey-black);
+  padding: 20px;
+  margin: 20px 25px 10px;
+  border-radius: 1rem;
+}
+.header_heading {
+  text-align: center;
+}
+
+.header_info {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.header_user {
+  text-align: right;
+}
+.header_user h3 {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+/* button */
+.logout_button {
+  border: none;
+  background-color: #dd1d1ab2;
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: 1px solid var(--maximum-red);
+  border-radius: 10px;
+}
+
+.logout_button:hover {
+  cursor: pointer;
+  background-color: var(--maximum-red);
+  text-decoration: underline;
+}
