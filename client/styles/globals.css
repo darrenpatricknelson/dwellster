@@ -12,15 +12,40 @@ a {
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+body {
+  background-color: var(--baby-powder);
+}
+
+/* colours */
+:root {
+  /* red grouping */
+  --maximum-red: #dd1c1a;
+  --radical-red: #ff3366;
+  --paradise-pink: #ea526f;
+  --orange-pantone: #e53d00;
+  --flame-orange: #ff5400;
+  --cinnabar: #ef3e36;
+
+  /* green grouping */
+  --sap-green: #447604;
+  --dark-pastel: #0cca4a;
+  --malchite: #32e875;
+
+  /* Yellow grouping */
+  --amber: #ffbd00;
+  --middle-yellow: #ffe900;
+  --peach: #ffe1a8;
+
+  /* light grouping */
+  --baby-powder: #fcfff7; /* header background */
+  --ghost-white: #f7f7ff;
+  --aero-blue: #d3f8e2; /* use for adding new blog cloud */
+
+  /* dark grouping */
+  --smokey-black: #070600; /* Header text */
 }
