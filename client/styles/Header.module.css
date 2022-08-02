@@ -22,19 +22,3 @@
   display: inline-block;
   margin-right: 20px;
 }
-
-/* button */
-.logout_button {
-  border: none;
-  background-color: #dd1d1ab2;
-  margin-right: 10px;
-  padding: 6px 12px;
-  border: 1px solid var(--maximum-red);
-  border-radius: 10px;
-}
-
-.logout_button:hover {
-  cursor: pointer;
-  background-color: var(--maximum-red);
-  text-decoration: underline;
-}

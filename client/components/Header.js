@@ -1,6 +1,9 @@
 // imports
 import Head from 'next/head';
 
+// components
+import { Warning } from './Buttons.js';
+
 // styles
 import styles from '../styles/Header.module.css';
 
@@ -21,7 +24,7 @@ const Header = ({ page }) => {
                     </div>
                     <div className={styles.header_user}>
                         <h3>Welcome (user)</h3>
-                        <button className={styles.logout_button}>Logout</button>
+                        <Warning text='Logout' />
                     </div>
 
                 </div>
