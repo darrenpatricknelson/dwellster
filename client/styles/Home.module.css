@@ -1,6 +1,12 @@
 /* home page */
+
 .container {
-  min-width: 100%;
+  max-width: 1800px;
+  margin: 30px auto;
+}
+
+.container_Body {
   display: grid;
-  grid-template-columns: 15% 85%;
+  grid-template-columns: 12% 86%;
+  gap: 2%;
 }

@@ -1,7 +1,7 @@
 /* styles for the navbar */
 .navbar {
-  height: 100%;
-  margin: 10px 10px 20px 25px;
+  /* height: 100%; */
+  /* margin: 10px 10px 20px 25px; */
   border-radius: 1rem;
   background-color: var(--aero-blue);
 }

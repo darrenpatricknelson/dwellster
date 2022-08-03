@@ -2,7 +2,7 @@
 /* shared styles */
 .card {
   padding: 20px 15px;
-
+  margin: 10px 0;
   background-color: var(--aero-blue);
   border: 1px dotted var(--middle-yellow);
   border-radius: 1rem;
