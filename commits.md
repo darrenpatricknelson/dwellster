@@ -99,3 +99,8 @@ FEAT: New feature: Backend created
         - Created a controller for the blog
         - Created routes for the blog
     - (Untested)
+
+### Commit #7
+UPDATE: Update to container and blog card
+    - Updated the blog card to have one standard colour and variable buttons depending on who's logged in
+    - Update to the blog.module.css file 

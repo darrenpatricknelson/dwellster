@@ -2,6 +2,15 @@
 /* shared styles */
 .card {
   padding: 20px 15px;
+
+  background-color: var(--aero-blue);
+  border: 1px dotted var(--middle-yellow);
+  border-radius: 1rem;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 70% 30%;
 }
 
 .body {
@@ -15,23 +24,4 @@
 
 .blog_interaction {
   /*  */
-}
-
-/* admin card styles */
-.card_Admin {
-  background-color: var(--aero-blue);
-  border: 1px dotted var(--middle-yellow);
-  border-radius: 1rem;
-}
-
-.header_Admin {
-  display: grid;
-  grid-template-columns: 70% 30%;
-}
-
-/* styles for the user */
-.card_User {
-  background-color: var(--middle-yellow);
-  border: 1px dotted var(--aero-blue);
-  border-radius: 1rem;
 }

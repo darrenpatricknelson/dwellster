@@ -12,34 +12,28 @@ import { Primary } from './Buttons.js';
 import styles from '../styles/Container.module.css';
 
 const Container = () => {
-    const [isAdmin, setIsAdmin] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(true);
+
     return (
         <div className={styles.container}>
-            {isAdmin ?
-                <div>
-                    <div className={styles.button_AddBlog}>
-                        <Primary text="Whats on your mind today..." />
-                    </div>
-                    <div className={styles.blog_cards}>
-                        <Card admin={true} />
-                        <Card admin={true} />
-                        <Card admin={true} />
-                        <Card admin={true} />
-                        <Card admin={true} />
-                        <Card admin={true} />
-                    </div>
-
+            <button onClick={(e) => {
+                e.preventDefault();
+                setIsAdmin(prev => !prev);
+            }}>state</button>
+            <div>
+                <div className={styles.button_AddBlog}>
+                    <Primary text="Whats on your mind today..." />
                 </div>
-                :
                 <div className={styles.blog_cards}>
-                    <Card admin={false} />
-                    <Card admin={false} />
-                    <Card admin={false} />
-                    <Card admin={false} />
-                    <Card admin={false} />
-                    <Card admin={false} />
+                    <Card isAdmin={isAdmin} />
+                    <Card isAdmin={isAdmin} />
+                    <Card isAdmin={isAdmin} />
+                    <Card isAdmin={isAdmin} />
+                    <Card isAdmin={isAdmin} />
+                    <Card isAdmin={isAdmin} />
                 </div>
-            }
+
+            </div>
 
         </div>
     );
