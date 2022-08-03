@@ -1,10 +1,10 @@
-### Push #1
+### Commit #1
 Scaffolding and folder structure
 
-### Push #2
+### Commit #2
 Business requirements and wireframe
 
-### Push #3
+### Commit #3
 NEW: 
     - .gitignore file
 
@@ -20,7 +20,7 @@ FEAT: New Feature - Header component
         - Add functionality to the logout button
         - Import data from DB to populate placeholders information 
 
-### Push #4
+### Commit #4
 NEW: 
     - Commit tracker file created
 
@@ -35,7 +35,7 @@ UPDATE: Updated layout and index.js
         - Added a div container to house the navbar and main container
     - Made updates to Home.module.css styles
 
-### Push #5
+### Commit #5
 NEW: Created new components
     - Blog.js
     - Button,js
@@ -60,3 +60,42 @@ FEAT: New feature: Container
         - Find better colours (Colour pallet is not working!)
         - Populate placeholder with DB information once backend is up and running
     
+### Commit #6
+NEW: New files
+    - Created server.js running on Port 3001
+    - Created .env file containing the PORT, MONGO_URI and SECRET-KEY
+    - New files:
+        - server.js
+        - auth.routes.js
+        - community.routes.js
+        - blog.routes.js
+        - auth.models.js
+        - community.models.js
+        - blog.models.js
+        - auth.controller.js
+        - community.controller.js
+        - blog.controller.js
+
+UPDATE: Update to package.json
+    - Added "type": "module" to allow importing modules instead of requiring
+    - Update to commits. file (changed Labels from 'Push #' to 'Commit #')
+    
+
+FEAT: New feature: Backend created
+    - Routes added to server.js
+    - User
+        - This will be used to authenticate uses
+        - Created a model for the user
+        - Created a controller for the user
+        - Created routes for the user
+    - Community
+        - This will be used to shared blog posts within a community
+        - Created a model for the Community
+        - Created a controller for the Community
+        - Created routes for the Community
+    - blog
+        - This will be used to create blogs
+        - Created a model for the blog
+        - Created a controller for the blog
+        - Created routes for the blog
+    - (Untested)
