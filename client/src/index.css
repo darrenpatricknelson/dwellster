@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* colours */
+:root {
+  /* red grouping */
+  --maximum-red: #dd1c1a;
+  --radical-red: #ff3366;
+  --paradise-pink: #ea526f;
+  --orange-pantone: #e53d00;
+  --flame-orange: #ff5400;
+  --cinnabar: #ef3e36;
+
+  /* blue grouping */
+  --capri: #62bfed;
+  --dodger-blue: #3590f3;
+
+  /* green grouping */
+  --sap-green: #447604;
+  --dark-pastel: #0cca4a;
+  --malchite: #32e875;
+
+  /* Yellow grouping */
+  --amber: #ffbd00;
+  --middle-yellow: #ffe900;
+  --peach: #ffe1a8;
+
+  /* light grouping */
+  --baby-powder: #fcfff7; /* header background */
+  --ghost-white: #f7f7ff;
+  --aero-blue: #d3f8e2; /* use for adding new blog cloud */
+
+  /* dark grouping */
+  --smokey-black: #070600; /* Header text */
+}

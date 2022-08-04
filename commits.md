@@ -219,3 +219,9 @@ CONFIG: Configured next to proxy requests
 REBUILD: Rebuilding the frontend
     - Not using next.js as a framework
     - Using create-react-app
+
+### Commit #34
+REBUILD: Authentication feature rebuilt
+    - Auth feature rebuilt and working
+    - Using session storage again because cookies is a bit to complex 
+    - Can look into cookies at a later stage
