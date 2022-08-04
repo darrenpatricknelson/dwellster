@@ -1,4 +1,7 @@
+// imports
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { ThemeProvider } from 'react-bootstrap';
 import Layout from "../components/Layout";
 
@@ -9,6 +12,23 @@ import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 function MyApp({ Component, pageProps }) {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // setup use router
+  const router = useRouter();
+
+  // use effect to validate the user is authenticated
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.replace('/authentication');
+    } else {
+      router.replace('/');
+
+    }
+
+  }, []);
+
+
   return (
     <>
       <Head>
@@ -19,9 +39,13 @@ function MyApp({ Component, pageProps }) {
         minBreakpoint="xxs"
       >
 
-        <Layout>
+        {isAuthenticated ?
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+          :
           <Component {...pageProps} />
-        </Layout>
+        }
       </ThemeProvider>
     </>
   );

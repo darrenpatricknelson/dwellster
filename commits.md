@@ -175,3 +175,10 @@ BUG: Fixed the link navigation bug
 UPDATE: Updated the button.js component
     - Updated the button component to spread the props
     - Which means I can add onClick functions to the imported button without having to pass the function down as a prop
+
+### Commit #26
+NEW: Setup authentication routes in _app.js
+    - Setup up the routing for authentication
+    - Used a useEffect hook to create a componentDidMount method
+    - Use useRouter to replace the route path
+    - Created a authentication.js file as well ass css module
