@@ -159,4 +159,9 @@ UPDATE: Refactor the buttons component
         - They use Next with Router
     - Update the header button and css
         - Added a div around the button to add a width property
+
+### Commit #23
+FEAT: New feature - Join community form
+    - Create the join community form on the join page
+    - Added functionality to the buttons by passing a function as a prop
         

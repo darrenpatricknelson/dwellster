@@ -4,25 +4,25 @@
 import styles from '../styles/Buttons.module.css';
 
 // Warning button
-export const Primary = ({ text }) => {
+export const Primary = ({ handlerFunction, text }) => {
     return (
-        <button className={`${styles.button} ${styles.primary}`}>{text}</button>
+        <button onClick={handlerFunction} className={`${styles.button} ${styles.primary}`}>{text}</button>
     );
 };
 
-// Interaction buttons (orange, baby blue button)
+// Interaction buttons (capri blue inner with dodger blue border)
 export const Interaction = ({ text }) => {
     return (
-        <button className={`${styles.button} ${styles.interaction}`}>
+        <button onClick={(e) => { e.preventDefault(); }} className={`${styles.button} ${styles.interaction}`}>
             {text}
         </button>
     );
 };
 
-// caution button (orange, neither good or bad)
+// caution button (paradise pink inner with orange pantone border)
 export const Caution = ({ text }) => {
     return (
-        <button className={`${styles.button} ${styles.caution}`}>
+        <button onClick={(e) => { e.preventDefault(); }} className={`${styles.button} ${styles.caution}`}>
             {text}
         </button>
     );
@@ -32,6 +32,9 @@ export const Caution = ({ text }) => {
 // Warning button
 export const Warning = ({ text }) => {
     return (
-        <button className={`${styles.button} ${styles.warning}`}>{text}</button>
+        <button onClick={(e) => { e.preventDefault(); }} className={`${styles.button} ${styles.warning}`}>{text}</button>
     );
 };
+
+export { };
+

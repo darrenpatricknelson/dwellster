@@ -25,8 +25,8 @@
 
 /* interaction */
 .interaction {
-  background-color: var(--baby-powder);
-  border: 1px solid var(--ghost-white);
+  background-color: var(--capri);
+  border: 1px solid var(--dodger-blue);
 }
 
 .interaction:hover {
@@ -36,8 +36,8 @@
 
 /* caution */
 .caution {
-  background-color: var(--dark-pastel);
-  border: 1px solid var(--sap-green);
+  background-color: var(--paradise-pink);
+  border: 1px solid var(--orange-pantone);
 }
 
 .caution:hover {
