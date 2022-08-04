@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { ThemeProvider } from 'react-bootstrap';
+import Layout from "../components/Layout";
 
 // my styles
 import '../styles/globals.css';
@@ -17,7 +18,10 @@ function MyApp({ Component, pageProps }) {
         breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
         minBreakpoint="xxs"
       >
-        <Component {...pageProps} />
+
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </>
   );

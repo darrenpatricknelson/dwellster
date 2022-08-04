@@ -2,12 +2,19 @@
 
 // imports
 import Header from './Header.js';
+import Navbar from './Navbar.js';
+
+// styles
+import styles from '../styles/Layout.module.css';
 
 const Layout = ({ children }) => {
     return (
-        <div>
+        <div className={styles.container}>
             <Header />
-            {children}
+            <div className={styles.container_Body}>
+                <Navbar />
+                {children}
+            </div>
         </div>
     );
 };

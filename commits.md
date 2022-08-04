@@ -130,3 +130,9 @@ UPDATE: Update to scripts and plugins
     - Update to .eslintrc.json file
     - Above updates updated the container component
     - Update to commits.ms file (added a commit number to each commit)
+
+### Commit #19
+UPDATE: Update to the layout component
+    - Redesigned the layout component
+    - Moved components from index to layout
+    - Changed Home.model.css to layout.model.css
