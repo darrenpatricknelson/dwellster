@@ -205,3 +205,8 @@ UPDATE: Updated package manager
 FEAT: New feature - Authentication page
     - Authentication page built using the authentication page from my previous project
     - Updated some styling 
+
+### Commit #31
+NEW: Frontend API requests file
+    - Created a file with all the api requests
+    - These functions can be export and imported anywhere in the frontend
