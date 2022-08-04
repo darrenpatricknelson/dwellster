@@ -165,3 +165,8 @@ FEAT: New feature - Join community form
     - Create the join community form on the join page
     - Added functionality to the buttons by passing a function as a prop
         
+### Commit #24 
+BUG: Fixed the link navigation bug
+    - Navigation links were not working properly
+    - Had to remove the onClick function of the button
+    - Reworked the nav buttons to be divs with the button styling

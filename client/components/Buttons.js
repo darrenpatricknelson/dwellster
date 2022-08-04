@@ -13,7 +13,7 @@ export const Primary = ({ handlerFunction, text }) => {
 // Interaction buttons (capri blue inner with dodger blue border)
 export const Interaction = ({ text }) => {
     return (
-        <button onClick={(e) => { e.preventDefault(); }} className={`${styles.button} ${styles.interaction}`}>
+        <button className={`${styles.button} ${styles.interaction}`}>
             {text}
         </button>
     );
@@ -22,7 +22,7 @@ export const Interaction = ({ text }) => {
 // caution button (paradise pink inner with orange pantone border)
 export const Caution = ({ text }) => {
     return (
-        <button onClick={(e) => { e.preventDefault(); }} className={`${styles.button} ${styles.caution}`}>
+        <button className={`${styles.button} ${styles.caution}`}>
             {text}
         </button>
     );

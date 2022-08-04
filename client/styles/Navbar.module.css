@@ -16,3 +16,8 @@
 .join_button {
   margin-top: 10px;
 }
+.nav_links {
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+}

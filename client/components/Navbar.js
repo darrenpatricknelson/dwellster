@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Caution, Interaction } from './Buttons';
 
 // styles
+import buttonStyles from '../styles/Buttons.module.css';
 import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
@@ -17,14 +18,18 @@ const Navbar = () => {
                 <div className={styles.community_button}>
                     <Link href="/community">
                         <a>
-                            <Caution text='Community' />
+                            <div className={`${styles.nav_links} ${buttonStyles.button} ${buttonStyles.caution}`}>
+                                Community
+                            </div>
                         </a>
                     </Link>
                 </div>
                 <div className={styles.join_button}>
                     <Link href="/join">
                         <a>
-                            <Interaction text='Join a community' />
+                            <div className={`${styles.nav_links} ${buttonStyles.button} ${buttonStyles.interaction}`}>
+                                Join a community
+                            </div>
                         </a>
                     </Link>
                 </div>
