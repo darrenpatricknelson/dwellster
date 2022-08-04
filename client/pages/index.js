@@ -1,10 +1,7 @@
 // Imports
 
-// components 
-import Community from '../components/Community.js';
-
 export default function Home() {
   return (
-    <Community />
+    <h1>Hello world</h1>
   );
 }

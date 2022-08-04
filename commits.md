@@ -143,3 +143,8 @@ UPDATE: Update to the Community display
     - This will display all the blogs within the community
     - Created a Community.js page
     - Updated BlogContainer.module.css to Community.module.css
+
+### Commit #21
+UPDATE: Update to the css
+    - Change the container to form around all the children of the layout component
+    - That way, not matter what page the user is on, the layout is the same

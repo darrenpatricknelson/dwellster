@@ -22,7 +22,7 @@ const Community = () => {
     const [isAdmin, setIsAdmin] = useState(false);
 
     return (
-        <div className={styles.container}>
+        <div>
             <button onClick={(e) => {
                 e.preventDefault();
                 setIsAdmin(prev => !prev);

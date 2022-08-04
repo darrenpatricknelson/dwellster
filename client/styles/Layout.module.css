@@ -5,6 +5,14 @@
   margin: 30px auto;
 }
 
+.blog_container {
+  min-height: 100%;
+  padding: 20px;
+  min-width: 600px;
+  border-radius: 1rem;
+  border: 1px dotted;
+}
+
 .container_Body {
   display: grid;
   grid-template-columns: 12% 86%;

@@ -13,7 +13,10 @@ const Layout = ({ children }) => {
             <Header />
             <div className={styles.container_Body}>
                 <Navbar />
-                {children}
+                <div className={styles.blog_container}>
+
+                    {children}
+                </div>
             </div>
         </div>
     );
