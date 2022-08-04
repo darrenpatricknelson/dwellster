@@ -214,3 +214,8 @@ NEW: Frontend API requests file
 ### Commit #32
 CONFIG: Configured next to proxy requests
     - Next.config.js needs to be updated to proxy requests
+
+### Commit #33
+REBUILD: Rebuilding the frontend
+    - Not using next.js as a framework
+    - Using create-react-app

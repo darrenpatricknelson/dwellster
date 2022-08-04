@@ -11,28 +11,22 @@ import { Inactive, Primary } from '../components/Buttons.js';
 // styles 
 import styles from '../styles/auth.module.css';
 
-// API request
-const postRequest = async (payload, url) => {
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-    });
-    const data = await response.json();
+// api request handlers
+import { postRequest } from '../apiRequests/requests.api.js';
 
-    return data;
-};
-
-const Authentication = ({ state, handleAuth }) => {
+const Authentication = ({ state, handleAuth, test }) => {
     // create states
     const [isLoggingIn, setIsLoggingIn] = useState(true);
     const [isSigningUp, setIsSigningUp] = useState(false);
     // states for the form
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [admin, setAdmin] = useState(false);
     // validations
+    const [nameError, setNameError] = useState('');
+    const [surnameError, setSurnameError] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [errorVal, setErrorVal] = useState(null);
@@ -40,8 +34,6 @@ const Authentication = ({ state, handleAuth }) => {
     const [isLoading, setIsLoading] = useState(false);
     // type of the password field 
     const [type, setType] = useState('password');
-
-
     // function changes the state
     const handleState = () => {
         setErrorVal(false);
@@ -62,17 +54,20 @@ const Authentication = ({ state, handleAuth }) => {
 
         // Its a loading animation but this whole api request search is to fast to actual properly enjoy it. Maybe on your side you will be able to see it 
         // quite sad :(
-        setIsLoading(true);
+        // setIsLoading(true);
 
 
         //  create payload
         const payload = {
+            'name': name,
+            'surname': surname,
             'email': email,
-            'password': password
+            'password': password,
+            'isAdmin': admin
         };
 
         // api request
-        const data = await postRequest(payload, `auth/${url}`);
+        const data = await postRequest(payload, `/auth/${url}`);
 
         // the following is error validations based off of the status code I added to the response from the backend
         if (data.status === 400) {
@@ -110,14 +105,15 @@ const Authentication = ({ state, handleAuth }) => {
 
         // if no errors, update states and lost the user in
         setErrorVal(null);
+        setName('');
+        setSurname('');
         setEmail('');
         setPassword('');
         setIsLoading(false);
+        // console.log(data);
         return handleAuth(data);
     };
 
-    // if the user tries to access the /home path through the url without being signed in, they will be redirected back to the authentication page
-    if (state) return <Navigate to="/home" />;
     return (
         <div className={styles.container}>
             <div className={styles.auth_page}>
@@ -127,6 +123,16 @@ const Authentication = ({ state, handleAuth }) => {
                     <form>
                         {isLoggingIn && <h3>Log in</h3>}
                         {isSigningUp && <h3>Sign up</h3>}
+                        {isSigningUp &&
+                            <>
+                                <input className={styles.emailInput} type="email" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                                <div className={styles.error}>{nameError}</div>
+                                <input className={styles.emailInput} type="email" placeholder="Surname" value={surname} onChange={(e) => setSurname(e.target.value)} />
+                                <div className={styles.error}>{surnameError}</div>
+                            </>
+                        }
+
+
                         <input className={styles.emailInput} type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                         <div className={styles.error}>{emailError}</div>
                         <div className={styles.passwordInput}>
@@ -141,6 +147,13 @@ const Authentication = ({ state, handleAuth }) => {
                             }}><FontAwesomeIcon icon={faEye} /></button>
                         </div>
                         <div className={styles.error}>{passwordError}</div>
+
+                        {isSigningUp &&
+                            <div className={styles.checkbox}>
+                                <input type="checkbox" name="agree" id="agree" onClick={() => setAdmin(prev => !prev)} />{' '}
+                                <label htmlFor="checkbox">Would you like to be an Admin?</label>
+                            </div>
+                        }
 
                         {/* a loading state animation */}
                         {isLoading ? <div className={styles.loading}>

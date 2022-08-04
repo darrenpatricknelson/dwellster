@@ -1,9 +1,0 @@
-/* styles for the blog container */
-
-.button_AddBlog {
-  float: right;
-  margin-bottom: 20px;
-}
-.clear_Float {
-  clear: both;
-}
