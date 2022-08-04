@@ -24,7 +24,9 @@ const Header = ({ page }) => {
                     </div>
                     <div className={styles.header_user}>
                         <h3>Welcome (user)</h3>
-                        <Warning text='Logout' />
+                        <div className={styles.button}>
+                            <Warning text='Logout' />
+                        </div>
                     </div>
 
                 </div>

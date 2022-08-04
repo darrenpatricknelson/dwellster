@@ -148,3 +148,15 @@ UPDATE: Update to the Community display
 UPDATE: Update to the css
     - Change the container to form around all the children of the layout component
     - That way, not matter what page the user is on, the layout is the same
+
+### Commit #22
+UPDATE: Refactor the buttons component
+    - Refactored the buttons component as well as the css
+    - Added 2 new buttons (interactions and caution)
+    - Added buttons to the navbar
+        - The buttons contain links to different pages
+        - These links are functional
+        - They use Next with Router
+    - Update the header button and css
+        - Added a div around the button to add a width property
+        

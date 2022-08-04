@@ -1,12 +1,21 @@
 /* all the buttons */
+.button {
+  width: 100%;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+}
+
+.buttons:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Colours */
 /* Primary */
 .primary {
-  border: none;
   background-color: var(--dark-pastel);
-  margin-right: 10px;
-  padding: 6px 12px;
   border: 1px solid var(--sap-green);
-  border-radius: 10px;
 }
 
 .primary:hover {
@@ -14,14 +23,32 @@
   text-decoration: underline;
 }
 
+/* interaction */
+.interaction {
+  background-color: var(--baby-powder);
+  border: 1px solid var(--ghost-white);
+}
+
+.interaction:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* caution */
+.caution {
+  background-color: var(--dark-pastel);
+  border: 1px solid var(--sap-green);
+}
+
+.caution:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 /* warning */
 .warning {
-  border: none;
   background-color: #dd1d1ab2;
-  margin-right: 10px;
-  padding: 6px 12px;
   border: 1px solid var(--maximum-red);
-  border-radius: 10px;
 }
 
 .warning:hover {

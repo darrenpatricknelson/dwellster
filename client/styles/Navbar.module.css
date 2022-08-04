@@ -5,3 +5,14 @@
   border-radius: 1rem;
   background-color: var(--aero-blue);
 }
+.buttons {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid;
+}
+.community_button {
+  margin-bottom: 10px;
+}
+.join_button {
+  margin-top: 10px;
+}
