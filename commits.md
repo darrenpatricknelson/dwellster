@@ -192,3 +192,11 @@ FEAT: New feature - context
 BUG: (FIXED) Changed file name of context
     - Change the context file name from Dwellster to User
     - Need to create separate context for Community
+
+### Commit #29
+UPDATE: Updated package manager
+    - Installed font awesome
+
+### Commit #30
+UPDATE: Updated package manager
+    - Installed font awesome
