@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { ThemeProvider } from 'react-bootstrap';
 import Layout from "../components/Layout";
 
+// context
+import { DwellsterContextProvider } from "../context/Dwellster.context.js";
 // my styles
 import '../styles/globals.css';
 
@@ -34,18 +36,21 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      {/* theme provider is context from bootstrap */}
       <ThemeProvider
         breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
         minBreakpoint="xxs"
       >
-
-        {isAuthenticated ?
-          <Layout>
+        {/* dwellsterContextProvider is context created by myself */}
+        <DwellsterContextProvider>
+          {isAuthenticated ?
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+            :
             <Component {...pageProps} />
-          </Layout>
-          :
-          <Component {...pageProps} />
-        }
+          }
+        </DwellsterContextProvider>
       </ThemeProvider>
     </>
   );

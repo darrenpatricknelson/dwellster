@@ -182,3 +182,8 @@ NEW: Setup authentication routes in _app.js
     - Used a useEffect hook to create a componentDidMount method
     - Use useRouter to replace the route path
     - Created a authentication.js file as well ass css module
+
+### Commit #27
+FEAT: New feature - context
+    - Setup context provider as well as context hook for the user
+    - Still next to setup for the community
