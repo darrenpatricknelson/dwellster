@@ -187,3 +187,8 @@ NEW: Setup authentication routes in _app.js
 FEAT: New feature - context
     - Setup context provider as well as context hook for the user
     - Still next to setup for the community
+
+### Commit #28
+BUG: (FIXED) Changed file name of context
+    - Change the context file name from Dwellster to User
+    - Need to create separate context for Community

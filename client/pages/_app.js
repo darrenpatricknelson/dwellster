@@ -6,7 +6,7 @@ import { ThemeProvider } from 'react-bootstrap';
 import Layout from "../components/Layout";
 
 // context
-import { DwellsterContextProvider } from "../context/Dwellster.context.js";
+import { UserContextProvider } from "../context/User.context.js";
 // my styles
 import '../styles/globals.css';
 
@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
         minBreakpoint="xxs"
       >
         {/* dwellsterContextProvider is context created by myself */}
-        <DwellsterContextProvider>
+        <UserContextProvider>
           {isAuthenticated ?
             <Layout>
               <Component {...pageProps} />
@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }) {
             :
             <Component {...pageProps} />
           }
-        </DwellsterContextProvider>
+        </UserContextProvider>
       </ThemeProvider>
     </>
   );

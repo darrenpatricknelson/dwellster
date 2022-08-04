@@ -4,7 +4,6 @@ import { createContext, useReducer } from 'react';
 
 // Will be creating context for both the user as well as the community
 export const UserContext = createContext();
-export const CommunityContext = createContext();
 
 // create my reducer function
 export const userReducer = (userState, action) => {
@@ -32,7 +31,7 @@ export const userReducer = (userState, action) => {
     }
 };
 
-export const DwellsterContextProvider = ({ children }) => {
+export const UserContextProvider = ({ children }) => {
     // create the reducer hook
     const [userState, dispatch] = useReducer(userReducer, {
         user: null
@@ -40,8 +39,8 @@ export const DwellsterContextProvider = ({ children }) => {
 
 
     return (
-        <DwellsterContext.Provider value={{ ...userState, dispatch }}>
+        <UserContext.Provider value={{ ...userState, dispatch }}>
             {children}
-        </DwellsterContext.Provider>
+        </UserContext.Provider>
     );
 };
