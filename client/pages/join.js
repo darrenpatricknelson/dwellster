@@ -26,7 +26,7 @@ export default function Join() {
                             {/* <button onClick={handleSubmit} className={`${buttonStyles.button} ${buttonStyles.primary}`}>
                                 Join
                             </button> */}
-                            <Primary handlerFunction={handleSubmit} text={`Submit`} />
+                            <Primary onClick={handleSubmit} text={`Submit`} />
                         </div>
                     </form>
                 </div>

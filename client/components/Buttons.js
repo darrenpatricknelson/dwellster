@@ -4,9 +4,9 @@
 import styles from '../styles/Buttons.module.css';
 
 // Warning button
-export const Primary = ({ handlerFunction, text }) => {
+export const Primary = ({ text, ...props }) => {
     return (
-        <button onClick={handlerFunction} className={`${styles.button} ${styles.primary}`}>{text}</button>
+        <button {...props} className={`${styles.button} ${styles.primary}`}>{text}</button>
     );
 };
 

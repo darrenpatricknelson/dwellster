@@ -170,3 +170,8 @@ BUG: Fixed the link navigation bug
     - Navigation links were not working properly
     - Had to remove the onClick function of the button
     - Reworked the nav buttons to be divs with the button styling
+
+### Commit #25
+UPDATE: Updated the button.js component
+    - Updated the button component to spread the props
+    - Which means I can add onClick functions to the imported button without having to pass the function down as a prop
