@@ -136,3 +136,10 @@ UPDATE: Update to the layout component
     - Redesigned the layout component
     - Moved components from index to layout
     - Changed Home.model.css to layout.model.css
+
+### Commit #20
+UPDATE: Update to the Community display
+    - Change BlogContainer to Community
+    - This will display all the blogs within the community
+    - Created a Community.js page
+    - Updated BlogContainer.module.css to Community.module.css

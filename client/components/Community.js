@@ -16,9 +16,9 @@ import { Primary } from './Buttons.js';
 const lists = [1, 1, 1, 1, 1, 1, 1, 1, 1];
 
 // styles 
-import styles from '../styles/BlogContainer.module.css';
+import styles from '../styles/Community.module.css';
 
-const BlogContainer = () => {
+const Community = () => {
     const [isAdmin, setIsAdmin] = useState(false);
 
     return (
@@ -58,4 +58,4 @@ const BlogContainer = () => {
     );
 };
 
-export default BlogContainer;
+export default Community;

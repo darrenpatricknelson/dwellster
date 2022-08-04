@@ -1,10 +1,10 @@
 // Imports
 
 // components 
-import BlogContainer from '../components/BlogContainer.js';
+import Community from '../components/Community.js';
 
 export default function Home() {
   return (
-    <BlogContainer />
+    <Community />
   );
 }
