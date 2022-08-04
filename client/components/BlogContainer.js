@@ -2,20 +2,20 @@
 // It will either output a home blog page for the admin or a blog page for the user
 
 // bootstrap imports
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 // imports
 import { useState } from 'react';
 
 // components
-import { Card, Blog, Cloud } from './Blogs.js';
+import { Blog, Card, Cloud } from './Blogs.js';
 import { Primary } from './Buttons.js';
 
 const lists = [1, 1, 1, 1, 1, 1, 1, 1, 1];
 
-// styles
+// styles 
 import styles from '../styles/BlogContainer.module.css';
 
 const BlogContainer = () => {

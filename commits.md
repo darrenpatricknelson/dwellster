@@ -8,10 +8,12 @@ Business requirements and wireframe
 NEW: 
     - .gitignore file
 
+### Commit #4
 UPDATE: Update to css files
     - Added variables for the colour pallet I'm going to use to globals.css
     - Deleted home.module.css
 
+### Commit #5
 FEAT: New Feature - Header component
     - Created a Header component 
     - Created a Header.module.css file
@@ -20,22 +22,24 @@ FEAT: New Feature - Header component
         - Add functionality to the logout button
         - Import data from DB to populate placeholders information 
 
-### Commit #4
+### Commit #6
 NEW: 
     - Commit tracker file created
 
+### Commit #7
 FEAT: New feature - Navbar
     - Incomplete
     - Created a Navbar component
     - Created Navbar.module.css
 
+### Commit #8
 UPDATE: Updated layout and index.js
     - Made updates to the layout.js component
     - Made updates to index.js file
         - Added a div container to house the navbar and main container
     - Made updates to Home.module.css styles
 
-### Commit #5
+### Commit #9
 NEW: Created new components
     - Blog.js
     - Button,js
@@ -43,11 +47,13 @@ NEW: Created new components
     - Blogs.module.css
     - Buttons.module.css
 
+### Commit #10
 UPDATE: Update to Header component
     - Update to the button in the header component
     - This button will now imported from the Buttons.js component
     - Added the container comp to the index.js file
 
+### Commit #11
 FEAT: New feature: Container
     - This component will contain all the different forms of the blog state
     - Blog state could be:
@@ -60,7 +66,7 @@ FEAT: New feature: Container
         - Find better colours (Colour pallet is not working!)
         - Populate placeholder with DB information once backend is up and running
     
-### Commit #6
+### Commit #12
 NEW: New files
     - Created server.js running on Port 3001
     - Created .env file containing the PORT, MONGO_URI and SECRET-KEY
@@ -76,11 +82,12 @@ NEW: New files
         - community.controller.js
         - blog.controller.js
 
+### Commit #13
 UPDATE: Update to package.json
     - Added "type": "module" to allow importing modules instead of requiring
     - Update to commits. file (changed Labels from 'Push #' to 'Commit #')
     
-
+### Commit #14
 FEAT: New feature: Backend created
     - Routes added to server.js
     - User
@@ -100,7 +107,26 @@ FEAT: New feature: Backend created
         - Created routes for the blog
     - (Untested)
 
-### Commit #7
+### Commit #15
 UPDATE: Update to container and blog card
     - Updated the blog card to have one standard colour and variable buttons depending on who's logged in
     - Update to the blog.module.css file 
+
+### Commit #16
+UPDATE: Update to px amounts
+    - Standardizing the px amounts
+    - Changing from % to fixed pixel numbers
+    - Change name of the container component to blogContainer (All components and css files)
+
+### Commit #17
+NEW: Added bootstrap 
+    - Added bootstrap components to the BlogContainer field
+    - Now the card gets mapped inside of a responsive container
+
+### Commit #18
+UPDATE: Update to scripts and plugins
+    - Added a few extensions (tabnine)
+    - Added a .babelrc.json file
+    - Update to .eslintrc.json file
+    - Above updates updated the container component
+    - Update to commits.ms file (added a commit number to each commit)
