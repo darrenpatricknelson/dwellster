@@ -200,3 +200,8 @@ UPDATE: Updated package manager
 ### Commit #30
 UPDATE: Updated package manager
     - Installed font awesome
+
+### Commit #31
+FEAT: New feature - Authentication page
+    - Authentication page built using the authentication page from my previous project
+    - Updated some styling 

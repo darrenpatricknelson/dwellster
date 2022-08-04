@@ -11,18 +11,18 @@ export const Primary = ({ text, ...props }) => {
 };
 
 // Interaction buttons (capri blue inner with dodger blue border)
-export const Interaction = ({ text }) => {
+export const Interaction = ({ text, ...props }) => {
     return (
-        <button className={`${styles.button} ${styles.interaction}`}>
+        <button {...props} className={`${styles.button} ${styles.interaction}`}>
             {text}
         </button>
     );
 };
 
 // caution button (paradise pink inner with orange pantone border)
-export const Caution = ({ text }) => {
+export const Caution = ({ text, ...props }) => {
     return (
-        <button className={`${styles.button} ${styles.caution}`}>
+        <button {...props} className={`${styles.button} ${styles.caution}`}>
             {text}
         </button>
     );
@@ -30,11 +30,16 @@ export const Caution = ({ text }) => {
 
 
 // Warning button
-export const Warning = ({ text }) => {
+export const Warning = ({ text, ...props }) => {
     return (
-        <button onClick={(e) => { e.preventDefault(); }} className={`${styles.button} ${styles.warning}`}>{text}</button>
+        <button {...props} className={`${styles.button} ${styles.warning}`}>{text}</button>
     );
 };
 
-export { };
+// Warning button
+export const Inactive = ({ text, ...props }) => {
+    return (
+        <button {...props} className={`${styles.button} ${styles.inactive}`}>{text}</button>
+    );
+};
 
