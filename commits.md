@@ -210,3 +210,7 @@ FEAT: New feature - Authentication page
 NEW: Frontend API requests file
     - Created a file with all the api requests
     - These functions can be export and imported anywhere in the frontend
+
+### Commit #32
+CONFIG: Configured next to proxy requests
+    - Next.config.js needs to be updated to proxy requests
