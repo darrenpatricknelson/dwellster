@@ -266,3 +266,13 @@ UPDATE: Added nav links to the home page
 UPDATE: Updating to routing
     - Rerouting users to the authentication page if they log out
     - Added logout functionality the the logout button in the header
+
+### Commit #43
+NEW: New package - React bootstrap
+
+### Commit #44
+UPDATE: Added React bootstrap to the community page
+    - Change the layout of the blog cards
+    - Made responsive
+    - Added react ThemeProvider context to app.js
+    - Added context to the community.js page to validate whether a user is an admin or not
