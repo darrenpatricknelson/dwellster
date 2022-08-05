@@ -261,3 +261,8 @@ UPDATE: Update to nav
 
 ### Commit #41
 UPDATE: Added nav links to the home page
+
+### Commit #42
+UPDATE: Updating to routing
+    - Rerouting users to the authentication page if they log out
+    - Added logout functionality the the logout button in the header

@@ -11,6 +11,12 @@ import styles from '../styles/Header.module.css';
 const Header = ({ page }) => {
     const { user } = useUserContext();
 
+    // function deals with a user logging out
+    const handleLogout = () => {
+        sessionStorage.clear();
+    };
+
+
     return (
         <>
             {/* A header component to display page names above the URL */}
@@ -28,7 +34,9 @@ const Header = ({ page }) => {
                     <div className={styles.header_user}>
                         <h3>Welcome {`${user.name} ${user.surname}`}</h3>
                         <div className={styles.button}>
-                            <Warning text='Logout' />
+                            <a href="/">
+                                <Warning onClick={handleLogout} text='Logout' />
+                            </a>
                         </div>
                     </div>
 
