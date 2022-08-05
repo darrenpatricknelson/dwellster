@@ -258,3 +258,6 @@ NEW: Added favicons
 UPDATE: Update to nav
     - Took out the heading 
     - Removed the border
+
+### Commit #41
+UPDATE: Added nav links to the home page
