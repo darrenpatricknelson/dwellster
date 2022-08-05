@@ -225,3 +225,10 @@ REBUILD: Authentication feature rebuilt
     - Auth feature rebuilt and working
     - Using session storage again because cookies is a bit to complex 
     - Can look into cookies at a later stage
+
+### Commit #35
+REBUILD: Layout rebuilt
+    - Installed new package called react-helmet
+        - Used to add a title to the page (and Meta-tags)
+    - Added the layout component around the home page interior
+    - Will do this for all pages 

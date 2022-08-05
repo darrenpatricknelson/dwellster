@@ -2,9 +2,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
-// pages
-import Home from '../pages/Home';
-
 // styles
 import '../styles/loading.css';
 
