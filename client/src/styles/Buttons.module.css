@@ -1,0 +1,69 @@
+/* all the buttons */
+.button {
+  width: 100%;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+}
+
+.buttons:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Colours */
+/* Primary */
+.primary {
+  background-color: var(--dark-pastel);
+  border: 1px solid var(--sap-green);
+}
+
+.primary:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* interaction */
+.interaction {
+  background-color: var(--capri);
+  border: 1px solid var(--dodger-blue);
+}
+
+.interaction:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* caution */
+.caution {
+  background-color: var(--paradise-pink);
+  border: 1px solid var(--orange-pantone);
+}
+
+.caution:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* warning */
+.warning {
+  background-color: #dd1d1ab2;
+  border: 1px solid var(--maximum-red);
+}
+
+.warning:hover {
+  cursor: pointer;
+  background-color: var(--maximum-red);
+}
+
+/* 
+If you run into trouble with the size and spacing of the buttons
+Leave the common styles in this folder
+Add the button specific styles to the css module it is related to 
+Add add a classname to the imported component
+Just make the styles do not clash
+
+I rate don't have spacing and sizing specific styles in this particular file
+
+does not work. shit
+*/

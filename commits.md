@@ -282,3 +282,6 @@ UPDATE: Added routing for the join page
 
 ### Commit #46
 PUSH: Context files
+
+### Commit #46
+PUSH: CSS files
