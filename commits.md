@@ -232,3 +232,8 @@ REBUILD: Layout rebuilt
         - Used to add a title to the page (and Meta-tags)
     - Added the layout component around the home page interior
     - Will do this for all pages 
+
+### Commit #35
+REBUILD: Header rebuilt
+    - Rebuilt the header 
+    - Updated index.css to contain the global.css styles
