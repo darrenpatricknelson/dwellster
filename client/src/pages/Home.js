@@ -18,7 +18,7 @@ export default function Home({ Component, pageProps, isLoggedIn }) {
             <div className={styles.home_page}>
                 <h1>Welcome to Dwellster! A community friendly blog like no other.</h1>
                 <p>View your communities -&gt; <a href="/home/community">Community</a> </p>
-                <p>Find a new community -&gt; <a href="/home/community">New community</a> </p>
+                <p>Find a new community -&gt; <a href="/home/join">New community</a> </p>
             </div>
         </Layout>
     );

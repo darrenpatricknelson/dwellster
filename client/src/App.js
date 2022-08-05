@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { ThemeProvider } from 'react-bootstrap';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useUserContext } from './hooks/useUserContext.js';
 
 // pages
-import Community from './components/Community.js';
 import Authentication from './pages/Authentication.js';
+import Community from './pages/Community.js';
 import Home from './pages/Home.js';
+import Join from './pages/Join.js';
 
 // component
 import Loading from './components/Loading.js';
@@ -32,13 +34,6 @@ const App = () => {
     // console.log(user); {status: 200, user {...}}
     setIsLoading(false);
     setIsLoggedIn(state);
-  };
-
-  // function deals with a user logging out
-  const handleLogout = () => {
-
-    sessionStorage.clear();
-    setIsLoggedIn(false);
   };
 
   // creating a session variable 
@@ -84,14 +79,20 @@ const App = () => {
   }
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Loading isLoggedIn={isLoggedIn} />} />
-          <Route path="/authentication" element={<Authentication handleAuth={handleAuth} isLoggedIn={isLoggedIn} />} />
-          <Route path="/home" element={<Home isLoggedIn={isLoggedIn} />} />
-          <Route path="/home/community" element={<Community />} />
-        </Routes>
-      </BrowserRouter>
+      <ThemeProvider
+        breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
+        minBreakpoint="xxs"
+      >
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Loading isLoggedIn={isLoggedIn} />} />
+            <Route path="/authentication" element={<Authentication handleAuth={handleAuth} isLoggedIn={isLoggedIn} />} />
+            <Route path="/home" element={<Home isLoggedIn={isLoggedIn} />} />
+            <Route path="/home/community" element={<Community isLoggedIn={isLoggedIn} />} />
+            <Route path="/home/join" element={<Join isLoggedIn={isLoggedIn} />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </div>
   );
 };
