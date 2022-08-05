@@ -1,0 +1,40 @@
+/* styles for the Header component */
+.header {
+  background-color: var(--aero-blue);
+  color: var(--smokey-black);
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 1rem;
+}
+.header_heading {
+  text-align: center;
+}
+
+.header_info {
+  display: flex;
+  flex-direction: row;
+}
+
+.header_admin {
+  width: 50%;
+}
+
+.header_user {
+  text-align: right;
+  width: 50%;
+}
+.header_user h3 {
+  display: flex;
+  flex-direction: row;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.button {
+  display: inline-block;
+  width: 100px;
+}
+
+div h3 {
+  font-size: 22px;
+}
