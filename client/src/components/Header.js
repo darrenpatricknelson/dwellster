@@ -1,5 +1,6 @@
 // imports
 import { Helmet } from "react-helmet";
+import { useUserContext } from '../hooks/useUserContext.js';
 
 // components
 import { Warning } from './Buttons.js';
@@ -8,6 +9,9 @@ import { Warning } from './Buttons.js';
 import styles from '../styles/Header.module.css';
 
 const Header = ({ page }) => {
+    const { user } = useUserContext();
+
+    console.log(user);
     return (
         <>
             {/* A header component to display page names above the URL */}
@@ -23,7 +27,7 @@ const Header = ({ page }) => {
                         <h3>(Blogger's) board</h3>
                     </div>
                     <div className={styles.header_user}>
-                        <h3>Welcome (user)</h3>
+                        <h3>Welcome {`${user.name} ${user.surname}`}</h3>
                         <div className={styles.button}>
                             <Warning text='Logout' />
                         </div>

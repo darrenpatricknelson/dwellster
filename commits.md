@@ -237,3 +237,11 @@ REBUILD: Layout rebuilt
 REBUILD: Header rebuilt
     - Rebuilt the header 
     - Updated index.css to contain the global.css styles
+
+### Commit #36
+REBUILD: Header rebuilt
+    - Committing Header.module.css (forgot during last commit)
+
+### Commit #36
+UPDATE: Added context to the header component
+    - Added context to the header component to display the logged in users name
