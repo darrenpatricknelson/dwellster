@@ -1,0 +1,22 @@
+/* styles for the navbar */
+.navbar {
+  /* height: 100%; */
+  /* margin: 10px 10px 20px 25px; */
+  border-radius: 1rem;
+  background-color: var(--aero-blue);
+}
+.buttons {
+  width: 100%;
+  padding: 20px;
+}
+.community_button {
+  margin-bottom: 10px;
+}
+.join_button {
+  margin-top: 10px;
+}
+.nav_links {
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+}

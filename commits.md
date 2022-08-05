@@ -253,3 +253,8 @@ REBUILD: Rebuilt Navbar
 
 ### Commit #39
 NEW: Added favicons
+
+### Commit #40
+UPDATE: Update to nav
+    - Took out the heading 
+    - Removed the border

@@ -9,7 +9,7 @@ const Navbar = () => {
 
     return (
         <div className={styles.navbar}>
-            <h1>hello</h1>
+
             <div className={styles.buttons}>
                 <div className={styles.community_button}>
                     <a href="/home/community">
