@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useUserContext } from './hooks/useUserContext.js';
 
 // pages
+import Community from './components/Community.js';
 import Authentication from './pages/Authentication.js';
 import Home from './pages/Home.js';
 
@@ -88,6 +89,7 @@ const App = () => {
           <Route path="/" element={<Loading isLoggedIn={isLoggedIn} />} />
           <Route path="/authentication" element={<Authentication handleAuth={handleAuth} isLoggedIn={isLoggedIn} />} />
           <Route path="/home" element={<Home isLoggedIn={isLoggedIn} />} />
+          <Route path="/home/community" element={<Community />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -242,6 +242,11 @@ REBUILD: Header rebuilt
 REBUILD: Header rebuilt
     - Committing Header.module.css (forgot during last commit)
 
-### Commit #36
+### Commit #37
 UPDATE: Added context to the header component
     - Added context to the header component to display the logged in users name
+
+### Commit #38
+REBUILD: Rebuilt Navbar
+    - Removed next.js links and added anchor tags for routing
+    - Added Route path to app.js

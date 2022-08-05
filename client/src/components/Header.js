@@ -11,7 +11,6 @@ import styles from '../styles/Header.module.css';
 const Header = ({ page }) => {
     const { user } = useUserContext();
 
-    console.log(user);
     return (
         <>
             {/* A header component to display page names above the URL */}
