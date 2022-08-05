@@ -250,3 +250,6 @@ UPDATE: Added context to the header component
 REBUILD: Rebuilt Navbar
     - Removed next.js links and added anchor tags for routing
     - Added Route path to app.js
+
+### Commit #39
+NEW: Added favicons
