@@ -276,3 +276,9 @@ UPDATE: Added React bootstrap to the community page
     - Made responsive
     - Added react ThemeProvider context to app.js
     - Added context to the community.js page to validate whether a user is an admin or not
+
+### Commit #45
+UPDATE: Added routing for the join page
+
+### Commit #46
+PUSH: Context files
