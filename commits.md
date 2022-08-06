@@ -289,3 +289,6 @@ PUSH: CSS files
 ### Commit #47
 UPDATE: Update the join.js file
     - Deleted unused lines of code
+
+### Commit #48
+PUSH: Pushed .gitignore files
