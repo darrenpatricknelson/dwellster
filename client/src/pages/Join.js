@@ -7,7 +7,6 @@ import { Primary } from '../components/Buttons';
 import Layout from '../components/Layout.js';
 
 // styles 
-import buttonStyles from '../styles/Buttons.module.css';
 import styles from '../styles/Join.module.css';
 
 export default function Join({ isLoggedIn }) {
@@ -26,10 +25,6 @@ export default function Join({ isLoggedIn }) {
                     <form>
                         <input type="text" placeholder="Enter the community key provided by your blogger..." />
                         <div className={styles.button}>
-
-                            {/* <button onClick={handleSubmit} className={`${buttonStyles.button} ${buttonStyles.primary}`}>
-                                Join
-                            </button> */}
                             <Primary onClick={handleSubmit} text={`Submit`} />
                         </div>
                     </form>
