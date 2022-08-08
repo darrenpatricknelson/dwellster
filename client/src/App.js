@@ -61,7 +61,7 @@ const App = () => {
 
       // get communities
       const communities = await getCommunity(token);
-      comDispatch({ type: 'GET_COMMUNITY', payload: communities });
+      comDispatch({ type: 'GET_COMMUNITY', payload: communities.community });
 
 
       // we change the state to true

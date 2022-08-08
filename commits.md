@@ -343,3 +343,14 @@ NEW: Created new community context and hooks
     - Added context to the app.js file to update the community context
     - Added the context provider to the index.js file
     - Created a new api request to fetch any communities
+
+### Commit #56
+UPDATE: Change the backend getCommunity response
+    - The backend will respond differently depending on whether the user is an admin or not
+    - It will search the community database for a different result
+    - If admin, it will search for the communities admin email
+    - If not admin, it will search the communities members email
+    - Also added a message to the response to say whether the user is an admin or not
+    - Update to the app.js file
+        - Will handle the community dispatch differently 
+        - Will update with the community json data instead of the entire response

@@ -17,33 +17,61 @@ export const getCommunity = async (req, res) => {
     const { token } = req.params;
 
     // authenticating the user
-    const member = await User.find({ token });
+    const user = await User.find({ token });
 
     // check if the user exists
-    if (!member) {
+    if (!user) {
         res.send(404).json({
             status: 404,
             err: 'User not found'
         });
     }
 
-    //  if the user exists, 
-    // check if the community exists and is they have access
-    const community = await Community.find({ member });
+    if (!user[0].isAdmin) {
 
-    // check if the community exists
-    if (!community) {
-        res.send(404).json({
-            status: 404,
-            err: 'Member is not apart of any communities'
+        const member = user[0].email;
+        //  if the user exists, 
+        // check if the community exists and is they have access
+        const community = await Community.find({ member });
+
+        // check if the community exists
+        if (!community) {
+            res.send(404).json({
+                status: 404,
+                err: 'Member is not apart of any communities'
+            });
+        }
+
+        // if all the authentication is passed, return the community
+        res.status(200).send({
+            status: 200,
+            message: 'User is not an admin',
+            community
         });
     }
 
-    // if all the authentication is passed, return the community
-    res.status(200).send({
-        status: 200,
-        community
-    });
+    if (user[0].isAdmin) {
+
+        const adminEmail = user[0].email;
+        //  if the user exists, 
+        // check if the community exists and is they have access
+        const community = await Community.find({ adminEmail });
+
+        // check if the community exists
+        if (!community) {
+            res.send(404).json({
+                status: 404,
+                err: 'Member is not apart of any communities'
+            });
+        }
+
+        // if all the authentication is passed, return the community
+        res.status(200).send({
+            status: 200,
+            message: 'User is an admin',
+            community
+        });
+    }
 
 };
 
