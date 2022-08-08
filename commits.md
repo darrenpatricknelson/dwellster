@@ -362,3 +362,7 @@ UPDATE: Added a form to the addNewBlog page
     - Need to build the api interaction
     - Also committing the cloud.js component 
         - Commit #49 but never actually committed
+
+### Commit #57
+UNCOMMITTED: Blog.js
+    - Built the blog cards but never committed the file
