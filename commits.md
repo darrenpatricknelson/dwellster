@@ -309,3 +309,13 @@ UPDATE: Added context to the navbar
     - If the user is an admin, there will be a create community button
     - If the user is not an admin, there will be a join community button
     - Removed the 'user' context from app.js as it was not being used
+
+### Commit #52
+UPDATE: Added context to the join.js page
+    - Added context to the join.js page to display different headings depending on if the user is an admin or now
+    - If the user is an admin, there will be a create community heading
+    - If the user is not an admin, there will be a join community heading
+
+### Commit #53 
+UPDATE: User authentication post request name
+    - Updated the post request name from postRequest to userPostRequest

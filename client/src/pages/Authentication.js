@@ -13,7 +13,7 @@ import { Inactive, Primary } from '../components/Buttons.js';
 import styles from '../styles/auth.module.css';
 
 // api request handlers
-import { postRequest } from '../apiRequests/requests.api.js';
+import { userPostRequest } from '../apiRequests/requests.api.js';
 ;
 
 const Authentication = ({ state, handleAuth, test, isLoggedIn }) => {
@@ -69,7 +69,7 @@ const Authentication = ({ state, handleAuth, test, isLoggedIn }) => {
         };
 
         // api request
-        const data = await postRequest(payload, `/auth/${url}`);
+        const data = await userPostRequest(payload, `/auth/${url}`);
 
         // the following is error validations based off of the status code I added to the response from the backend
         if (data.status === 400) {
