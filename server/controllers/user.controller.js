@@ -1,6 +1,6 @@
 // imports 
-import User from '../models/user.model.js';
 import jwt from 'jsonwebtoken';
+import User from '../models/user.model.js';
 
 /* 
 ! Purpose
@@ -45,7 +45,7 @@ export const createJWT = async (payload) => {
 
 // fetch request
 export const userGetRequest = async (req, res) => {
-    const { token } = req.body;
+    const { token } = req.params;
 
     const user = await User.find({ token });
 

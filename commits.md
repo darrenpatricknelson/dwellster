@@ -319,3 +319,19 @@ UPDATE: Added context to the join.js page
 ### Commit #53 
 UPDATE: User authentication post request name
     - Updated the post request name from postRequest to userPostRequest
+
+### Commit #54
+NEW: New server interaction
+    - Creating a new community
+    - Created a function to handle creating a new community in community.controller.js
+    - Updated the community routes
+    - Updated the join.js page to display different forms if the user is an admin or not
+    - Wrote the api request function in requests.api.js
+
+### Commit #55
+NEW: New server interaction
+    - Joining a new community
+    - Created a function to handle creating a new community in community.controller.js
+    - Updated the community routes
+    - Updated the join.js page to display different forms if the user is an admin or not
+    - Wrote the api request function in requests.api.js

@@ -1,8 +1,8 @@
 // imports
-import Blog from '../models/blogs.model.js';
-import User from '../models/user.model.js';
-import Community from '../models/community.model.js';
 import jwt from 'jsonwebtoken';
+import Blog from '../models/blogs.model.js';
+import Community from '../models/community.model.js';
+import User from '../models/user.model.js';
 
 /* 
 ! Purpose
@@ -53,6 +53,54 @@ export const getCommunity = async (req, res) => {
         community
     });
 
+};
+
+// 
+// 
+// an admin is trying to create a new community
+export const createCommunity = async (req, res) => {
+    const { token, title, communityKey } = req.body;
+
+
+    // authenticating the user
+    const user = await User.find({ token });
+
+    // check if the user exists
+    if (!user) {
+        res.send(404).json({
+            status: 404,
+            err: 'User not found'
+        });
+    }
+
+    // check if the user is an admin
+    if (!user[0].isAdmin) {
+        res.send(404).json({
+            status: 404,
+            err: 'User is not an admin'
+        });
+    }
+
+
+    try {
+        // create an email variable
+        const adminEmail = user[0].email;
+
+        //  if the user exists and is an admin, 
+        // create a new community
+        const community = await Community.create({ adminEmail, title, communityKey });
+
+        // response
+        res.status(200).send({
+            status: 200,
+            community
+        });
+    } catch (err) {
+        res.status(400).send({
+            status: 400,
+            errors: err
+        });
+    }
 };
 
 // 
