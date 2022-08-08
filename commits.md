@@ -298,3 +298,7 @@ FEAT: New feature - Cloud container
     - Built the cloud container for when the user wants to add a new blog
     - Created routes for the add new blog page
     - Created a AddNewBlog.js file/ page + css file
+
+### Commit #50
+DELETE: Clearing all deleted files
+    - Clearing all the deleted files from my working tree
