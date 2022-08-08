@@ -28,8 +28,24 @@ export const userPostRequest = async (payload, url) => {
 //
 //
 // community api requests
+// admin creating a new community
 export const createNewCommunity = async (payload) => {
     const response = await fetch('/community/create', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    });
+    const data = await response.json();
+
+    return data;
+
+};
+
+// user joining a community
+export const joinCommunity = async (payload) => {
+    const response = await fetch('/community/join', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

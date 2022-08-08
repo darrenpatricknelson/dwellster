@@ -8,7 +8,7 @@ import { Primary } from '../components/Buttons';
 import Layout from '../components/Layout.js';
 
 // api requests
-import { createNewCommunity } from '../apiRequests/requests.api.js';
+import { createNewCommunity, joinCommunity } from '../apiRequests/requests.api.js';
 
 // styles 
 import styles from '../styles/Join.module.css';
@@ -35,10 +35,18 @@ export default function Join({ isLoggedIn }) {
     };
 
     // a user is trying to join a new community
-    const handleJoinCommunity = (e) => {
+    const handleJoinCommunity = async (e) => {
         e.preventDefault();
+        const token = sessionStorage.getItem('token');
 
-        console.log('Submit');
+        const payload = {
+            'token': token,
+            'communityKey': communityKey
+        };
+
+        const data = await joinCommunity(payload);
+
+        console.log(data);
     };
     if (!isLoggedIn) return <Navigate to="/authentication" />;
     return (
@@ -57,7 +65,7 @@ export default function Join({ isLoggedIn }) {
                         </form>
                         :
                         <form onSubmit={handleJoinCommunity}>
-                            <input type="text" placeholder="Enter the community key provided by your blogger..." />
+                            <input type="text" placeholder="Enter the community key provided by your blogger..." value={communityKey} onChange={(e) => setCommunityKey(e.target.value)} />
                             <div className={styles.button}>
                                 <Primary text={`Submit`} />
                             </div>

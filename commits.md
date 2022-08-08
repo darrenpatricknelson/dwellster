@@ -329,7 +329,7 @@ NEW: New server interaction
     - Wrote the api request function in requests.api.js
 
 ### Commit #55
-NEW: New server interaction
+NEW: New server interaction (Joining)
     - Joining a new community
     - Created a function to handle creating a new community in community.controller.js
     - Updated the community routes

@@ -128,33 +128,39 @@ export const joinCommunity = async (req, res) => {
     if (!community) {
         res.send(404).json({
             status: 404,
-            err: 'Community not found'
+            err: 'Community does not exist'
         });
     }
+
+
 
     // if the community exists, update its members
     try {
+        // create  a community id
+        const communityID = community[0].id;
+        // create a user
+        const member = user[0].email;
+
+        const existingMember = await Community.find({ member });
+
+        if (existingMember) {
+            res.status(400).json({
+                status: 400,
+                err: 'You already exist in this community'
+            });
+        }
+
         // add the new member to the members array
         await Community.updateOne(
-            { _id: community._id },
+            { _id: communityID },
             {
-                $push: { members: { user } }
+                $push: { members: { member } }
             }
         );
-    } catch (err) {
-        res.status(400).json({
-            status: 400,
-            errors: err
-        });
-    }
 
-    try {
-        // created an id from the above community object
-        const id = community._id;
-        // find the updated community
-        const newCommunity = await Community.findById(id);
 
-        // return that community
+        const newCommunity = await Community.findById(communityID);
+
         res.status(200).send({
             status: 200,
             newCommunity
