@@ -366,3 +366,11 @@ UPDATE: Added a form to the addNewBlog page
 ### Commit #57
 UNCOMMITTED: Blog.js
     - Built the blog cards but never committed the file
+
+### Commit #58
+UNCOMMITTED: Button.js
+    - Built the buttons but never committed the file
+
+### Commit #57
+UNCOMMITTED: Blog.js
+    - Built the blog cards but never committed the file
