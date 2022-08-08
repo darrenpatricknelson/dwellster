@@ -372,5 +372,5 @@ UNCOMMITTED: Button.js
     - Built the buttons but never committed the file
 
 ### Commit #57
-UNCOMMITTED: Blog.js
-    - Built the blog cards but never committed the file
+UNCOMMITTED: Community.js
+    - Added a route link to the community.js file but never committed

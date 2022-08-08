@@ -28,7 +28,9 @@ const Community = () => {
             <div>
                 {isAdmin &&
                     <div className={styles.button_AddBlog}>
-                        <Primary text="Whats on your mind today..." />
+                        <a href="/home/community/add">
+                            <Primary text="Whats on your mind today..." />
+                        </a>
                     </div>
                 }
                 <div className={styles.clear_Float}>
