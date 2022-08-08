@@ -14,13 +14,13 @@ Requests will be made to this endpoint when:
 
 // GET COMMUNITY DATA
 export const getCommunity = async (req, res) => {
-    const { token, communityKey } = req.body;
+    const { token } = req.params;
 
     // authenticating the user
-    const user = await User.find({ token });
+    const member = await User.find({ token });
 
     // check if the user exists
-    if (!user) {
+    if (!member) {
         res.send(404).json({
             status: 404,
             err: 'User not found'
@@ -29,21 +29,13 @@ export const getCommunity = async (req, res) => {
 
     //  if the user exists, 
     // check if the community exists and is they have access
-    const community = await Community.find({ communityKey });
+    const community = await Community.find({ member });
 
     // check if the community exists
     if (!community) {
         res.send(404).json({
             status: 404,
-            err: 'Community not found'
-        });
-    }
-
-    // check if user is a member
-    if (!community.members === user.email) {
-        res.send(404).json({
-            status: 404,
-            err: 'You are not apart of this community'
+            err: 'Member is not apart of any communities'
         });
     }
 

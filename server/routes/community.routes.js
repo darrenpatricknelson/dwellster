@@ -7,7 +7,7 @@ import { createCommunity, getCommunity, joinCommunity } from '../controllers/com
 
 // GET COMMUNITY DETAILS
 // used if there is a communityKey stored in the websites cookies
-communityRouter.get('/community', getCommunity);
+communityRouter.get('/fetch/:token', getCommunity);
 
 //
 // 

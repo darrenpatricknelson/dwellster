@@ -335,3 +335,11 @@ NEW: New server interaction (Joining)
     - Updated the community routes
     - Updated the join.js page to display different forms if the user is an admin or not
     - Wrote the api request function in requests.api.js
+
+### Commit #55
+NEW: Created new community context and hooks
+    - Created a new context file called Community.context.js
+    - This context is used to update all the communities a user belongs to
+    - Added context to the app.js file to update the community context
+    - Added the context provider to the index.js file
+    - Created a new api request to fetch any communities

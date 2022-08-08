@@ -3,15 +3,15 @@
 import { createContext, useReducer } from 'react';
 
 // create our context
-export const UserContext = createContext();
+export const CommunityContext = createContext();
 
 // create my reducer function
-export const userReducer = (state, action) => {
+export const communityReducer = (state, action) => {
     // Create the switch case functionality
     switch (action.type) {
-        case 'GET_USER':
+        case 'GET_COMMUNITY':
             return {
-                user: action.payload
+                community: action.payload
             };
 
         default:
@@ -19,16 +19,16 @@ export const userReducer = (state, action) => {
     }
 };
 
-export const UserContextProvider = ({ children }) => {
+export const CommunityContextProvider = ({ children }) => {
     // create the reducer hook
-    const [state, dispatch] = useReducer(userReducer, {
+    const [state, comDispatch] = useReducer(communityReducer, {
         user: null
     });
 
 
     return (
-        <UserContext.Provider value={{ ...state, dispatch }}>
+        <CommunityContext.Provider value={{ ...state, comDispatch }}>
             {children}
-        </UserContext.Provider>
+        </CommunityContext.Provider>
     );
 };

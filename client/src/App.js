@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from 'react-bootstrap';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useCommunityContext } from './hooks/useCommunityContext.js';
 import { useUserContext } from './hooks/useUserContext.js';
 
 // pages
@@ -14,25 +15,28 @@ import Join from './pages/Join.js';
 import Loading from './components/Loading.js';
 
 // api requests
-import { getUserDetails } from './apiRequests/requests.api.js';
+import { getCommunity, getUserDetails } from './apiRequests/requests.api.js';
 
 const App = () => {
   // destructure context
   const { dispatch } = useUserContext();
+  const { community, comDispatch } = useCommunityContext();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
 
 
   // function that deals with a user signing up/ logging in
-  const handleAuth = (user) => {
+  const handleAuth = async (user) => {
     setIsLoading(true);
 
     sessionStorage.setItem('auth', true);
     const state = sessionStorage.getItem('auth');
     sessionStorage.setItem('token', user.user.token);
     dispatch({ type: 'GET_USER', payload: user.user });
-    // console.log(user); {status: 200, user {...}}
+    // get communities
+    const communities = await getCommunity(user.user.token);
+    comDispatch({ type: 'GET_COMMUNITY', payload: communities.community });
     setIsLoading(false);
     setIsLoggedIn(state);
   };
@@ -53,8 +57,12 @@ const App = () => {
       const state = sessionStorage.getItem('auth');
       const token = sessionStorage.getItem('token');
       const data = await getUserDetails(token);
-      console.log(data);
       dispatch({ type: 'GET_USER', payload: data });
+
+      // get communities
+      const communities = await getCommunity(token);
+      comDispatch({ type: 'GET_COMMUNITY', payload: communities });
+
 
       // we change the state to true
       setIsLoading(false);

@@ -28,6 +28,15 @@ export const userPostRequest = async (payload, url) => {
 //
 //
 // community api requests
+// fetching a community
+export const getCommunity = async (token) => {
+    const response = await fetch(`/community/fetch/${token}`);
+    const data = await response.json();
+
+    return data;
+
+};
+
 // admin creating a new community
 export const createNewCommunity = async (payload) => {
     const response = await fetch('/community/create', {

@@ -3,11 +3,11 @@ import express from 'express';
 const authRouter = express.Router();
 
 // import the controller functions 
-import { userGetRequest, signupPostRequest, loginPostRequest } from '../controllers/user.controller.js';
+import { loginPostRequest, signupPostRequest, userGetRequest } from '../controllers/user.controller.js';
 
 // GET USER DETAILS
 // used if there is a token stored in the websites cookies
-authRouter.get('/user', userGetRequest);
+authRouter.get('/user/:token', userGetRequest);
 
 //
 // 

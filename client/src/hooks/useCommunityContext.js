@@ -1,6 +1,6 @@
 // imports
 import { useContext } from 'react';
-import { CommunityContext } from '../context/User.Context.js';
+import { CommunityContext } from '../context/Community.context.js';
 
 // In this file, we simply creating the useContext hook so that we can use iot globally 
 
