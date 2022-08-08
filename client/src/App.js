@@ -20,7 +20,7 @@ import { getCommunity, getUserDetails } from './apiRequests/requests.api.js';
 const App = () => {
   // destructure context
   const { dispatch } = useUserContext();
-  const { community, comDispatch } = useCommunityContext();
+  const { comDispatch } = useCommunityContext();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 

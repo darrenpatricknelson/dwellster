@@ -25,3 +25,25 @@
 .blog_interaction {
   /*  */
 }
+
+/* add new blog */
+.blog_title {
+  width: 100%;
+  border: 1px solid grey;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: var(--aero-blue);
+}
+.textarea {
+  width: 100%;
+  padding: 20px;
+  background-color: var(--aero-blue);
+  min-height: 600px;
+  max-height: 600px;
+}
+.errorVal {
+  width: 50%;
+  margin: 20px auto 0;
+  text-align: center;
+  color: #e34974;
+}

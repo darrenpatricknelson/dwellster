@@ -354,3 +354,11 @@ UPDATE: Change the backend getCommunity response
     - Update to the app.js file
         - Will handle the community dispatch differently 
         - Will update with the community json data instead of the entire response
+
+### Commit #57
+UPDATE: Added a form to the addNewBlog page
+    - Added an input for blog title
+    - Added a textarea so that the user can write their blog
+    - Need to build the api interaction
+    - Also committing the cloud.js component 
+        - Commit #49 but never actually committed
