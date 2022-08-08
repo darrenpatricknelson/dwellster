@@ -302,3 +302,10 @@ FEAT: New feature - Cloud container
 ### Commit #50
 DELETE: Clearing all deleted files
     - Clearing all the deleted files from my working tree
+
+### Commit #51
+UPDATE: Added context to the navbar
+    - Added context to the navbar to display different buttons depending on if the user is an admin or now
+    - If the user is an admin, there will be a create community button
+    - If the user is not an admin, there will be a join community button
+    - Removed the 'user' context from app.js as it was not being used

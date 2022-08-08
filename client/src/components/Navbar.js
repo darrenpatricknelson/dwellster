@@ -1,11 +1,14 @@
 // this component will be used to create a Navbar 
 
+// Imports 
+import { useUserContext } from '../hooks/useUserContext.js';
+
 // styles
 import buttonStyles from '../styles/Buttons.module.css';
 import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
-
+    const { user } = useUserContext();
 
     return (
         <div className={styles.navbar}>
@@ -21,7 +24,7 @@ const Navbar = () => {
                 <div className={styles.join_button}>
                     <a href="/home/join">
                         <div className={`${styles.nav_links} ${buttonStyles.button} ${buttonStyles.interaction}`}>
-                            Join a community
+                            {user.isAdmin ? 'Create a community' : 'Join a community'}
                         </div>
                     </a>
                 </div>

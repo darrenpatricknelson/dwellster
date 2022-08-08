@@ -18,7 +18,7 @@ import { getUserDetails } from './apiRequests/requests.api.js';
 
 const App = () => {
   // destructure context
-  const { user, dispatch } = useUserContext();
+  const { dispatch } = useUserContext();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
