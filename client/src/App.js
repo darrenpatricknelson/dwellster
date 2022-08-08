@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useUserContext } from './hooks/useUserContext.js';
 
 // pages
+import AddNewBlog from './pages/AddNewBlog.js';
 import Authentication from './pages/Authentication.js';
 import Community from './pages/Community.js';
 import Home from './pages/Home.js';
@@ -90,6 +91,7 @@ const App = () => {
             <Route path="/home" element={<Home isLoggedIn={isLoggedIn} />} />
             <Route path="/home/community" element={<Community isLoggedIn={isLoggedIn} />} />
             <Route path="/home/join" element={<Join isLoggedIn={isLoggedIn} />} />
+            <Route path="/home/community/add" element={<AddNewBlog isLoggedIn={isLoggedIn} />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

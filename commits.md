@@ -292,3 +292,9 @@ UPDATE: Update the join.js file
 
 ### Commit #48
 PUSH: Pushed .gitignore files
+
+### Commit #49
+FEAT: New feature - Cloud container
+    - Built the cloud container for when the user wants to add a new blog
+    - Created routes for the add new blog page
+    - Created a AddNewBlog.js file/ page + css file
