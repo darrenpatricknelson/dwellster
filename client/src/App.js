@@ -11,6 +11,7 @@ import Community from './pages/Community.js';
 import CommunityBlogs from './pages/CommunityBlogs.js';
 import Home from './pages/Home.js';
 import Join from './pages/Join.js';
+import LoadingPage from './pages/LoadingPage.js';
 
 // component
 import Loading from './components/Loading.js';
@@ -34,6 +35,7 @@ const App = () => {
     sessionStorage.setItem('auth', true);
     const state = sessionStorage.getItem('auth');
     sessionStorage.setItem('token', user.user.token);
+    sessionStorage.setItem('user', user.user.name);
     dispatch({ type: 'GET_USER', payload: user.user });
     // get communities
     const communities = await getCommunity(user.user.token);
@@ -74,13 +76,7 @@ const App = () => {
   if (isLoading) {
     return (
       <div className="loading_container">
-        <div className='loading'>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+        <Loading />
       </div>
     );
   }
@@ -92,7 +88,7 @@ const App = () => {
       >
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Loading isLoggedIn={isLoggedIn} />} />
+            <Route path="/" element={<div className="loading_container"><LoadingPage isLoggedIn={isLoggedIn} /> </div>} />
             <Route path="/authentication" element={<Authentication handleAuth={handleAuth} isLoggedIn={isLoggedIn} />} />
             <Route path="/home" element={<Home isLoggedIn={isLoggedIn} />} />
             <Route path="/home/join" element={<Join isLoggedIn={isLoggedIn} />} />

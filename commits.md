@@ -389,3 +389,9 @@ NEW: New page created - CommunityBlogs.js
 
 ### Commit #58
 UPDATE: Minor updates to Community.js
+
+### Commit #58
+UPDATE: Updated the loading state
+    - Created a loading page to display full page loading state
+    - Left the loading.js as a component and no longer a page
+    - Some minor clean-ups around other files

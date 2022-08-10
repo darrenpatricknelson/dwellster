@@ -4,7 +4,7 @@ import React from 'react';
 // styles
 import '../styles/loading.css';
 
-export default function Loading({ isLoggedIn }) {
+export default function Loading() {
 
   return (
     <div className='loading'>

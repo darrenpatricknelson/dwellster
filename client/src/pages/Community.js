@@ -16,8 +16,6 @@ import styles from '../styles/Community.module.css';
 export default function CommunityPage({ isLoggedIn }) {
     const { community, comDispatch } = useCommunityContext();
 
-
-
     useEffect(() => {
         const getCommunityDetails = async () => {
             // get communities
@@ -29,10 +27,6 @@ export default function CommunityPage({ isLoggedIn }) {
         getCommunityDetails();
 
     }, []);
-
-
-
-
 
     if (!isLoggedIn) return <Navigate to="/authentication" />;
     return (

@@ -9,7 +9,7 @@ import Layout from '../components/Layout.js';
 import styles from '../styles/Home.module.css';
 
 
-export default function Home({ Component, pageProps, isLoggedIn }) {
+export default function Home({ isLoggedIn }) {
 
 
     if (!isLoggedIn) return <Navigate to="/authentication" />;
