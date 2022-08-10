@@ -8,6 +8,7 @@ import { useUserContext } from './hooks/useUserContext.js';
 import AddNewBlog from './pages/AddNewBlog.js';
 import Authentication from './pages/Authentication.js';
 import Community from './pages/Community.js';
+import CommunityBlogs from './pages/CommunityBlogs.js';
 import Home from './pages/Home.js';
 import Join from './pages/Join.js';
 
@@ -59,9 +60,6 @@ const App = () => {
       const data = await getUserDetails(token);
       dispatch({ type: 'GET_USER', payload: data });
 
-      // get communities
-      const communities = await getCommunity(token);
-      comDispatch({ type: 'GET_COMMUNITY', payload: communities.community });
 
 
       // we change the state to true
@@ -97,8 +95,9 @@ const App = () => {
             <Route path="/" element={<Loading isLoggedIn={isLoggedIn} />} />
             <Route path="/authentication" element={<Authentication handleAuth={handleAuth} isLoggedIn={isLoggedIn} />} />
             <Route path="/home" element={<Home isLoggedIn={isLoggedIn} />} />
-            <Route path="/home/community" element={<Community isLoggedIn={isLoggedIn} />} />
             <Route path="/home/join" element={<Join isLoggedIn={isLoggedIn} />} />
+            <Route path="/home/community" element={<Community isLoggedIn={isLoggedIn} />} />
+            <Route path="/home/community/:title" element={<CommunityBlogs isLoggedIn={isLoggedIn} />} />
             <Route path="/home/community/add" element={<AddNewBlog isLoggedIn={isLoggedIn} />} />
           </Routes>
         </BrowserRouter>

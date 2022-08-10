@@ -374,3 +374,15 @@ UNCOMMITTED: Button.js
 ### Commit #57
 UNCOMMITTED: Community.js
     - Added a route link to the community.js file but never committed
+
+### Commit #58
+NEW: New page created - CommunityBlogs.js
+    - Created a new page that will host all the blogs in their card form
+    - Routes created for the new page
+        - /home/community/:title
+    - New react-router-dom package used: useParams
+        - Used to grab information from the params
+    - Community.js page updated to display the titles of the communities that the user is in
+    - Added a loading state to community.js
+    - Updated the Loading.js component
+        - Removed the loading_container style

@@ -22,7 +22,7 @@ export const communityReducer = (state, action) => {
 export const CommunityContextProvider = ({ children }) => {
     // create the reducer hook
     const [state, comDispatch] = useReducer(communityReducer, {
-        user: null
+        community: null
     });
 
 

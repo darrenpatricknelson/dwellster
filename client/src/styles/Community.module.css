@@ -7,3 +7,8 @@
 .clear_Float {
   clear: both;
 }
+
+/* loading state */
+.loading_state {
+  margin-top: 50px;
+}
