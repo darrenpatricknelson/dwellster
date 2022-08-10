@@ -386,3 +386,6 @@ NEW: New page created - CommunityBlogs.js
     - Added a loading state to community.js
     - Updated the Loading.js component
         - Removed the loading_container style
+
+### Commit #58
+UPDATE: Minor updates to Community.js

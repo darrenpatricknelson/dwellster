@@ -1,5 +1,5 @@
 // imports
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useCommunityContext } from '../hooks/useCommunityContext.js';
 
@@ -15,20 +15,15 @@ import styles from '../styles/Community.module.css';
 
 export default function CommunityPage({ isLoggedIn }) {
     const { community, comDispatch } = useCommunityContext();
-    const [isLoading, setIsLoading] = useState(false);
 
 
 
     useEffect(() => {
         const getCommunityDetails = async () => {
-            setIsLoading(true);
             // get communities
             const token = sessionStorage.getItem('token');
             const communities = await getCommunity(token);
             comDispatch({ type: 'GET_COMMUNITY', payload: communities.community });
-
-            //
-            setIsLoading(false);
         };
 
         getCommunityDetails();
