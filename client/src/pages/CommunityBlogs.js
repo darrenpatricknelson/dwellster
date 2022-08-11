@@ -15,7 +15,7 @@ import { getCommunity } from '../apiRequests/requests.api.js';
 import styles from '../styles/Community.module.css';
 
 export default function CommunityPage({ isLoggedIn }) {
-    const { title } = useParams();
+    const { communityTitle } = useParams();
     const { user } = useUserContext();
     const { community, comDispatch } = useCommunityContext();
 
@@ -24,7 +24,7 @@ export default function CommunityPage({ isLoggedIn }) {
     useEffect(() => {
         const getCommunityDetails = async () => {
             // get communities
-            const communities = await getCommunity(title);
+            const communities = await getCommunity(communityTitle);
             // console.log(communities.community[0].communityKey);
             sessionStorage.setItem('communityKey', communities.community[0].communityKey);
 
@@ -40,7 +40,7 @@ export default function CommunityPage({ isLoggedIn }) {
     return (
         <Layout page='Community'>
             <div className={styles.button_AddBlog}>
-                <a href={'/home/community/add'}>
+                <a href={`/home/community/add/${communityTitle}`}>
                     <Primary text='What are you thinking at the moment? Create a new Blog post here!' />
                 </a>
             </div>

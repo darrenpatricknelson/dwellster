@@ -1,6 +1,6 @@
 // imports
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 
 // components
 import { Primary } from '../components/Buttons.js';
@@ -15,20 +15,26 @@ import styles from '../styles/Blogs.module.css';
 
 
 const AddNewBlog = ({ isLoggedIn }) => {
+    const { communityTitle } = useParams();
+
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('https://www.lipsum.com/');
+    const [successVal, setSuccessVal] = useState('');
     const [errorVal, setErrorVal] = useState('');
 
-    const submitBlog = (e) => {
+    const submitBlog = async (e) => {
         e.preventDefault();
 
+        // validate a title exists
         if (!title) {
             return setErrorVal('Please give you blog a title!');
         }
 
+        // validate a description exists
         if (!description) {
             return setErrorVal("You can't post an empty blog!");
         }
+
         // clear errors
         setErrorVal('');
 
@@ -37,15 +43,26 @@ const AddNewBlog = ({ isLoggedIn }) => {
         const communityKey = sessionStorage.getItem('communityKey');
 
 
+        // create the payload
         const payload = {
             token,
             title,
             description,
             communityKey
         };
+        console.log(communityKey);
 
-        // handle blog submission here
-        console.log(payload.token);
+        // call the api request function 
+        const data = await addNewBlog(payload);
+
+        //  validation
+        if (data.status === 200) {
+            setSuccessVal(data.message);
+            setDescription('');
+            setTitle('');
+        }
+        // handle response
+        console.log(data);
     };
 
 
@@ -58,6 +75,12 @@ const AddNewBlog = ({ isLoggedIn }) => {
                     <textarea className={styles.textarea} placeholder="What are your thoughts?" value={description} onChange={(e) => setDescription(e.target.value)} />
                     <Primary text={`Post your blog`} />
                     <div className={styles.errorVal}><h5>{errorVal}</h5></div>
+                    {successVal && <div className={styles.successVal}>
+                        <h5>{successVal}</h5>
+                        <p>You can another another blog post or head back to the{' '}
+                            <span className={styles.link}><a href={`/home/community/${communityTitle}`}>blogs page</a></span></p>
+                    </div>}
+
                 </form>
             </Cloud>
         </Layout>

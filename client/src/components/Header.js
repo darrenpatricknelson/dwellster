@@ -11,7 +11,7 @@ import styles from '../styles/Header.module.css';
 
 const Header = ({ page }) => {
     const { user } = useUserContext();
-    const title = useParams();
+    const { communityTitle } = useParams();
 
     // function deals with a user logging out
     const handleLogout = () => {
@@ -31,7 +31,7 @@ const Header = ({ page }) => {
                 <h1 className={styles.header_heading}>Dwellster - come Dwell with me</h1>
                 <div className={styles.header_info}>
                     <div className={styles.header_admin}>
-                        {title && <h3>{title.title}</h3>}
+                        {communityTitle && <h3>{communityTitle}</h3>}
                     </div>
                     <div className={styles.header_user}>
                         <h3>Welcome {`${user.name} ${user.surname}`}</h3>

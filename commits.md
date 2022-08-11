@@ -438,3 +438,24 @@ UPDATE: Added/ Remove community key from sessionStorage
 UPDATE: Removed the stringfy function
     - Previous commit added the communityKey to the sessionStorage while stringfying the data
     - Removed the stringfy function inorder to skip the parsing step when retrieving data
+
+### Commit #67
+FEAT: New Feature - adding a new blog
+    - The user is now able to add a new blog
+    - The user can fill in the form on the community/add page and the blog will be added to the community database
+    - The title of the community database is stored in the url
+    - The community key is stored inside the sessionStorage
+    - The user is also given a link back to the communityBlog page using the community title in the url
+    - Backend is also up and running
+    - The response from the backend is a status code as well as a message
+    - Not responding with the full community database because when the user returns to the communityBlog page, the updated DB is fetched
+    - Therefor it would not make sense to update the DB from teh community/add page as well as the /community page
+    - Added some validation styling for successful/unsuccessful responses
+    - UPDATES: 
+        -Update to the header component: changed the name of the title in the params from title to communityTitle
+            - Reason being, 'title' clashed with the title in the addNewBlog form
+        - Update to the community.module.js file
+            - Changed the title of the  blogShcema from 'user' to 'blog'
+            - type is still === object
+
+

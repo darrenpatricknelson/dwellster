@@ -21,23 +21,22 @@ Requests will be made to this endpoint when:
 */
 
 // CREATING A NEW BLOG POST
-export const createBlogPost = async () => {
+export const createBlogPost = async (req, res) => {
     const { token, title, description, communityKey } = req.body;
 
     // authenticating the user
-    const user = await User.find({ token });
-
+    const user = await User.findOne({ token });
     // check if the user exists
     if (!user) {
-        res.send(404).json({
+        res.status(404).json({
             status: 404,
             err: 'User not found'
         });
     }
 
     // check if the user is an admin
-    if (!user.admin) {
-        res.send(404).json({
+    if (!user.isAdmin) {
+        res.status(404).json({
             status: 404,
             err: 'User is not an admin'
         });
@@ -47,15 +46,16 @@ export const createBlogPost = async () => {
     // create the blog in the database
     try {
         const blog = await Blog.create({ title, description });
-
         // once that blog is created an it to the community
-        const community = addBlog(blog, communityKey);
+        const community = await addBlog(blog, communityKey);
 
-        // response
-        res.status(200).send({
-            status: 200,
-            community
-        });
+        if (community) {
+            // response
+            res.status(200).send({
+                status: 200,
+                message: 'Blog added'
+            });
+        }
     } catch (err) {
         res.status(400).json({
             status: 400,
@@ -65,7 +65,7 @@ export const createBlogPost = async () => {
 };
 
 // DELETE A BLOG POST
-export const deleteBlogPost = async () => {
+export const deleteBlogPost = async (req, res) => {
     const { token, blogID, communityKey } = req.body;
 
     // authenticating the user
@@ -73,7 +73,7 @@ export const deleteBlogPost = async () => {
 
     // check if the user exists
     if (!user) {
-        res.send(404).json({
+        res.status(404).json({
             status: 404,
             err: 'User not found'
         });
@@ -81,7 +81,7 @@ export const deleteBlogPost = async () => {
 
     // check if the user is an admin
     if (!user.admin) {
-        res.send(404).json({
+        res.status(404).json({
             status: 404,
             err: 'User is not an admin'
         });

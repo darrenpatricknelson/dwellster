@@ -47,3 +47,13 @@
   text-align: center;
   color: #e34974;
 }
+.successVal {
+  width: 50%;
+  margin: 20px auto 0;
+  text-align: center;
+  color: #4bb543;
+}
+.link {
+  margin: 0 5px;
+  text-decoration: underline;
+}

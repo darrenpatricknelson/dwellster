@@ -226,10 +226,13 @@ export const joinCommunity = async (req, res) => {
 // 
 // 
 // adding a blog to a community
-export const addBlog = async ({ blog, communityKey }) => {
-    // check if the community exists and is they have access
-    const community = await Community.find({ communityKey });
+export const addBlog = async (blog, communityKey) => {
+    console.log(blog);
+    console.log('add blog function has started');
 
+
+    // check if the community exists and is they have access
+    const community = await Community.findOne({ communityKey });
     // check if the community exists
     if (!community) {
         res.status(404).json({
@@ -244,15 +247,14 @@ export const addBlog = async ({ blog, communityKey }) => {
     // if the community exists, update its members
     try {
         // add the new member to the members array
-        const newCommunity = await Community.updateOne(
+        await Community.updateOne(
             { _id: id },
             {
                 $push: { blogs: { blog } }
             }
         );
 
-        // return the data
-        return newCommunity;
+        return true;
     } catch (err) {
         return err;
     }

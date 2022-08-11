@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 
 // blog schema
 const blogSchema = new mongoose.Schema({
-    user: {
+    blog: {
         type: Object,
         required: false
     }

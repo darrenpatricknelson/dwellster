@@ -82,7 +82,7 @@ export const joinCommunity = async (payload) => {
 // Blogs api requests
 // adding a new blog
 export const addNewBlog = async (payload) => {
-    const response = await fetch(`/community/fetch/`, {
+    const response = await fetch(`/blog/create`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

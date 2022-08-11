@@ -94,8 +94,8 @@ const App = () => {
             <Route path="/home" element={<Home isLoggedIn={isLoggedIn} />} />
             <Route path="/home/join" element={<Join isLoggedIn={isLoggedIn} />} />
             <Route path="/home/community" element={<Community isLoggedIn={isLoggedIn} />} />
-            <Route path="/home/community/:title" element={<CommunityBlogs isLoggedIn={isLoggedIn} />} />
-            <Route path="/home/community/add" element={<AddNewBlog isLoggedIn={isLoggedIn} />} />
+            <Route path="/home/community/:communityTitle" element={<CommunityBlogs isLoggedIn={isLoggedIn} />} />
+            <Route path="/home/community/add/:communityTitle" element={<AddNewBlog isLoggedIn={isLoggedIn} />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
