@@ -1,5 +1,6 @@
 // imports
 import { Helmet } from "react-helmet";
+import { useParams } from 'react-router-dom';
 import { useUserContext } from '../hooks/useUserContext.js';
 
 // components
@@ -10,6 +11,7 @@ import styles from '../styles/Header.module.css';
 
 const Header = ({ page }) => {
     const { user } = useUserContext();
+    const title = useParams();
 
     // function deals with a user logging out
     const handleLogout = () => {
@@ -29,7 +31,7 @@ const Header = ({ page }) => {
                 <h1 className={styles.header_heading}>Dwellster - come Dwell with me</h1>
                 <div className={styles.header_info}>
                     <div className={styles.header_admin}>
-                        <h3>(Blogger's) board</h3>
+                        {title && <h3>{title.title}</h3>}
                     </div>
                     <div className={styles.header_user}>
                         <h3>Welcome {`${user.name} ${user.surname}`}</h3>
