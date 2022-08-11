@@ -34,17 +34,18 @@ const AddNewBlog = ({ isLoggedIn }) => {
 
         // gather data for api request
         const token = sessionStorage.getItem('token');
+        const communityKey = sessionStorage.getItem('communityKey');
 
 
         const payload = {
             token,
             title,
-            description
-            // communityKey
+            description,
+            communityKey
         };
 
         // handle blog submission here
-        console.log(payload);
+        console.log(payload.token);
     };
 
 

@@ -432,3 +432,9 @@ UPDATE: Updated the communityBlog page
 UPDATE: Added/ Remove community key from sessionStorage
     - On community page, the sessionStorage community key is removed
     - On communityBlog page, the sessionStorage community key is added
+    - Needed the communityKey for when an admin is adding a new blog to the community
+
+### Commit #66
+UPDATE: Removed the stringfy function
+    - Previous commit added the communityKey to the sessionStorage while stringfying the data
+    - Removed the stringfy function inorder to skip the parsing step when retrieving data

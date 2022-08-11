@@ -26,7 +26,7 @@ export default function CommunityPage({ isLoggedIn }) {
             // get communities
             const communities = await getCommunity(title);
             // console.log(communities.community[0].communityKey);
-            sessionStorage.setItem('communityKey', JSON.stringify(communities.community[0].communityKey));
+            sessionStorage.setItem('communityKey', communities.community[0].communityKey);
 
             comDispatch({ type: 'GET_COMMUNITY', payload: communities.community[0] });
 
@@ -35,10 +35,6 @@ export default function CommunityPage({ isLoggedIn }) {
         getCommunityDetails();
 
     }, []);
-
-
-
-
 
     if (!isLoggedIn) return <Navigate to="/authentication" />;
     return (
