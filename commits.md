@@ -422,3 +422,8 @@ BUG: Fixing tangled API requests
     - The communityBlog page used the same api request
     - Created a new api request to return a single community for the communityBlog page
     - This request takes in the title in the url and returns a single community
+
+### Commit #64
+UPDATE: Updated the communityBlog page
+    - Updated the communityBlog page to display certain information depending on the blog array within the community api response
+    - Added a button to navigate to the addNewBlog form
