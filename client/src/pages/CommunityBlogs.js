@@ -25,6 +25,8 @@ export default function CommunityPage({ isLoggedIn }) {
         const getCommunityDetails = async () => {
             // get communities
             const communities = await getCommunity(title);
+            // console.log(communities.community[0].communityKey);
+            sessionStorage.setItem('communityKey', JSON.stringify(communities.community[0].communityKey));
 
             comDispatch({ type: 'GET_COMMUNITY', payload: communities.community[0] });
 

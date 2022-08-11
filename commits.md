@@ -427,3 +427,8 @@ BUG: Fixing tangled API requests
 UPDATE: Updated the communityBlog page
     - Updated the communityBlog page to display certain information depending on the blog array within the community api response
     - Added a button to navigate to the addNewBlog form
+
+### Commit #65
+UPDATE: Added/ Remove community key from sessionStorage
+    - On community page, the sessionStorage community key is removed
+    - On communityBlog page, the sessionStorage community key is added

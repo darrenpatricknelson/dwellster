@@ -23,6 +23,9 @@ export default function CommunityPage({ isLoggedIn }) {
             setNoCommunity(null);
             setIsLoading(true);
 
+            // clear any communityKeys in the storage
+            sessionStorage.removeItem('communityKey');
+
             // get communities
             const token = sessionStorage.getItem('token');
             const communities = await getCommunities(token);
