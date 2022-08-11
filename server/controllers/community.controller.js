@@ -21,7 +21,7 @@ export const getCommunity = async (req, res) => {
 
     // check if the user exists
     if (!user) {
-        res.send(404).json({
+        res.status(404).json({
             status: 404,
             err: 'User not found'
         });
@@ -33,22 +33,33 @@ export const getCommunity = async (req, res) => {
         //  if the user exists, 
         // check if the community exists and is they have access
         const community = await Community.find({ member });
+        // console.log(community);
+        const communities = [];
 
-        // check if the community exists
-        if (!community) {
-            res.send(404).json({
+        community.forEach(key => {
+            key.members.forEach(user => {
+                if (user.member === member) {
+                    // user is member
+                    communities.push(key);
+                }
+            });
+        });
+
+        if (communities.length === 0) {
+            res.status(404).json({
                 status: 404,
-                err: 'Member is not apart of any communities'
+                err: 'Member is not apart of any communities',
+                message: 'You are not apart of any communities'
             });
         }
 
-        // if all the authentication is passed, return the community
+        // response
         res.status(200).send({
             status: 200,
-            message: 'User is not an admin',
-            community
+            isAdmin: false,
+            communities
         });
-    }
+    };
 
     if (user[0].isAdmin) {
 
@@ -59,7 +70,7 @@ export const getCommunity = async (req, res) => {
 
         // check if the community exists
         if (!community) {
-            res.send(404).json({
+            res.status(404).json({
                 status: 404,
                 err: 'Member is not apart of any communities'
             });
@@ -68,7 +79,7 @@ export const getCommunity = async (req, res) => {
         // if all the authentication is passed, return the community
         res.status(200).send({
             status: 200,
-            message: 'User is an admin',
+            isAdmin: true,
             community
         });
     }
@@ -87,7 +98,7 @@ export const createCommunity = async (req, res) => {
 
     // check if the user exists
     if (!user) {
-        res.send(404).json({
+        res.status(404).json({
             status: 404,
             err: 'User not found'
         });
@@ -95,7 +106,7 @@ export const createCommunity = async (req, res) => {
 
     // check if the user is an admin
     if (!user[0].isAdmin) {
-        res.send(404).json({
+        res.status(404).json({
             status: 404,
             err: 'User is not an admin'
         });
@@ -134,7 +145,7 @@ export const joinCommunity = async (req, res) => {
 
     // check if the user exists
     if (!user) {
-        res.send(404).json({
+        res.status(404).json({
             status: 404,
             err: 'User not found'
         });
@@ -146,7 +157,7 @@ export const joinCommunity = async (req, res) => {
 
     // check if the community exists
     if (!community) {
-        res.send(404).json({
+        res.status(404).json({
             status: 404,
             err: 'Community does not exist'
         });
@@ -205,7 +216,7 @@ export const addBlog = async ({ blog, communityKey }) => {
 
     // check if the community exists
     if (!community) {
-        res.send(404).json({
+        res.status(404).json({
             status: 404,
             err: 'Community not found'
         });
@@ -241,7 +252,7 @@ export const deleteBlog = async ({ blog, communityKey }) => {
 
     // check if the community exists
     if (!community) {
-        res.send(404).json({
+        res.status(404).json({
             status: 404,
             err: 'Community not found'
         });

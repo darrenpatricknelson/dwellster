@@ -1,5 +1,5 @@
 // imports
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useCommunityContext } from '../hooks/useCommunityContext.js';
 
@@ -15,13 +15,35 @@ import styles from '../styles/Community.module.css';
 
 export default function CommunityPage({ isLoggedIn }) {
     const { community, comDispatch } = useCommunityContext();
+    const [isLoading, setIsLoading] = useState(false);
+    const [noCommunity, setNoCommunity] = useState(null);
 
     useEffect(() => {
         const getCommunityDetails = async () => {
+            setNoCommunity(null);
+            setIsLoading(true);
+
             // get communities
             const token = sessionStorage.getItem('token');
             const communities = await getCommunity(token);
+            console.log(communities);
+            // handle errors
+            if (communities.status === 404) {
+                setIsLoading(false);
+                setNoCommunity(communities.message);
+                return console.error(communities.err);
+            }
+
+            if (!communities.isAdmin) {
+                comDispatch({ type: 'GET_COMMUNITY', payload: communities.communities });
+                setNoCommunity(null);
+                setIsLoading(false);
+                return;
+            }
             comDispatch({ type: 'GET_COMMUNITY', payload: communities.community });
+            setNoCommunity(null);
+            setIsLoading(false);
+
         };
 
         getCommunityDetails();
@@ -31,11 +53,20 @@ export default function CommunityPage({ isLoggedIn }) {
     if (!isLoggedIn) return <Navigate to="/authentication" />;
     return (
         <Layout page='Community'>
+
+
             {community ? community.map(com => {
                 return <a key={com.title} href={`/home/community/${com.title}`} > {com.title}</a>;
-            }) : <div className={styles.loading_state}>
+            }) : isLoading &&
+            <div className={styles.loading_state}>
                 <Loading />
             </div>}
+            {noCommunity &&
+                <div>
+                    <p>{noCommunity}</p>
+                    <p>Find a new community -&gt; <a href="/home/join">New community</a> </p>
+                </div>}
+
 
         </Layout>
     );

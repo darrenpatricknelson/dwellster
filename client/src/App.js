@@ -30,6 +30,7 @@ const App = () => {
 
   // function that deals with a user signing up/ logging in
   const handleAuth = async (user) => {
+    console.log(user);
     setIsLoading(true);
 
     sessionStorage.setItem('auth', true);

@@ -401,3 +401,9 @@ BUG: Fixed the loading page navigation
     - Was not being redirected to the respective pages
     - User would hang on the loading page
     - Added an else if statement to correct this bug
+
+### Commit #60
+BUG: Fixed the api response for communities
+    - The api was sending back all communities regardless if the user was a member or not
+    - Had to sort the response from mongo and determine if the user was a member by deconstructing the array/object and checking the members array 
+    - Returning a response depending on the new communities array created after the community mongoDB response
