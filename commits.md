@@ -407,3 +407,6 @@ BUG: Fixed the api response for communities
     - The api was sending back all communities regardless if the user was a member or not
     - Had to sort the response from mongo and determine if the user was a member by deconstructing the array/object and checking the members array 
     - Returning a response depending on the new communities array created after the community mongoDB response
+
+### Commit #61
+UPDATE: Update to the way community titles are displayed

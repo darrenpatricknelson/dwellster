@@ -56,7 +56,8 @@ export default function CommunityPage({ isLoggedIn }) {
 
 
             {community ? community.map(com => {
-                return <a key={com.title} href={`/home/community/${com.title}`} > {com.title}</a>;
+                // I'm actually lazy and didn't want to style the bullets here 
+                return <ul><a key={com.title} href={`/home/community/${com.title}`} > {com.title}</a></ul>;
             }) : isLoading &&
             <div className={styles.loading_state}>
                 <Loading />
