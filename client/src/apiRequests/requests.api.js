@@ -28,8 +28,17 @@ export const userPostRequest = async (payload, url) => {
 //
 //
 // community api requests
-// fetching a community
-export const getCommunity = async (token) => {
+// fetching a community (SINGULAR)
+export const getCommunity = async (title) => {
+    const response = await fetch(`/community/fetch/blogs/${title}`);
+    const data = await response.json();
+
+    return data;
+
+};
+
+// fetching a community (PLURAL)
+export const getCommunities = async (token) => {
     const response = await fetch(`/community/fetch/${token}`);
     const data = await response.json();
 
@@ -65,4 +74,23 @@ export const joinCommunity = async (payload) => {
 
     return data;
 
-}; 
+};
+
+//
+//
+//
+// Blogs api requests
+// adding a new blog
+export const addNewBlog = async (payload) => {
+    const response = await fetch(`/community/fetch/`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    });
+    const data = await response.json();
+
+    return data;
+
+};

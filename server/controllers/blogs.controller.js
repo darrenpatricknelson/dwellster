@@ -1,8 +1,8 @@
 // imports
-import Blog from '../models/blogs.model.js';
-import User from '../models/user.model.js';
-import Community from '../models/community.model.js';
 import jwt from 'jsonwebtoken';
+import Blog from '../models/blogs.model.js';
+import Community from '../models/community.model.js';
+import User from '../models/user.model.js';
 
 // import community functions
 import { addBlog, deleteBlog } from './community.controller.js';
@@ -22,7 +22,7 @@ Requests will be made to this endpoint when:
 
 // CREATING A NEW BLOG POST
 export const createBlogPost = async () => {
-    const { token, payload, communityKey } = req.body;
+    const { token, title, description, communityKey } = req.body;
 
     // authenticating the user
     const user = await User.find({ token });
@@ -44,9 +44,6 @@ export const createBlogPost = async () => {
     }
 
     // user is an admin so now we create a blog post
-    // deconstruct the payload
-    const { title, description } = payload;
-
     // create the blog in the database
     try {
         const blog = await Blog.create({ title, description });

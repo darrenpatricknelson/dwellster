@@ -415,3 +415,10 @@ UPDATE: Update to the way community titles are displayed
 UPDATE: Added the title of the community to the header
     - When the user opens a specific communities clogs, that communities title will display on the header
     - The title is taken from the url using react-router-doms useParams hook
+
+### Commit #63
+BUG: Fixing tangled API requests 
+    - Initially the api request from the community page return all the communities
+    - The communityBlog page used the same api request
+    - Created a new api request to return a single community for the communityBlog page
+    - This request takes in the title in the url and returns a single community

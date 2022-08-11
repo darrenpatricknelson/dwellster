@@ -3,11 +3,15 @@ import express from 'express';
 const communityRouter = express.Router();
 
 // import the controller functions 
-import { createCommunity, getCommunity, joinCommunity } from '../controllers/community.controller.js';
+import { createCommunity, getCommunities, getCommunity, joinCommunity } from '../controllers/community.controller.js';
 
-// GET COMMUNITY DETAILS
+// GET COMMUNITY DETAILS (SINGLE COMMUNITY)
 // used if there is a communityKey stored in the websites cookies
-communityRouter.get('/fetch/:token', getCommunity);
+communityRouter.get('/fetch/blogs/:title', getCommunity);
+
+// GET COMMUNITY DETAILS (ALL COMMUNITIES)
+// used if there is a communityKey stored in the websites cookies
+communityRouter.get('/fetch/:token', getCommunities);
 
 //
 // 

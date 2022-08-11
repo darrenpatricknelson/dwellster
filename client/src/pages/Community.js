@@ -8,7 +8,7 @@ import Layout from '../components/Layout.js';
 import Loading from '../components/Loading.js';
 
 // api requests
-import { getCommunity } from '../apiRequests/requests.api.js';
+import { getCommunities } from '../apiRequests/requests.api.js';
 
 // styles 
 import styles from '../styles/Community.module.css';
@@ -25,7 +25,7 @@ export default function CommunityPage({ isLoggedIn }) {
 
             // get communities
             const token = sessionStorage.getItem('token');
-            const communities = await getCommunity(token);
+            const communities = await getCommunities(token);
             console.log(communities);
             // handle errors
             if (communities.status === 404) {

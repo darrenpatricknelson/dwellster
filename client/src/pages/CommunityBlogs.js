@@ -21,9 +21,10 @@ export default function CommunityPage({ isLoggedIn }) {
     useEffect(() => {
         const getCommunityDetails = async () => {
             // get communities
-            const token = sessionStorage.getItem('token');
-            const communities = await getCommunity(token);
-            comDispatch({ type: 'GET_COMMUNITY', payload: communities.community });
+            const communities = await getCommunity(title);
+
+            // console.log(communities.community[0]);
+            comDispatch({ type: 'GET_COMMUNITY', payload: communities.community[0] });
 
         };
 
@@ -38,8 +39,7 @@ export default function CommunityPage({ isLoggedIn }) {
     if (!isLoggedIn) return <Navigate to="/authentication" />;
     return (
         <Layout page='Community'>
-
-            {title && <h1>This is the title: {title}</h1>}
+            {/* display the cards  */}
         </Layout>
     );
 }

@@ -13,7 +13,23 @@ Requests will be made to this endpoint when:
 */
 
 // GET COMMUNITY DATA
+// GET SINGLE COMMUNITY 
 export const getCommunity = async (req, res) => {
+    const { title } = req.params;
+
+    try {
+        const community = await Community.find({ title });
+        res.status(200).send({
+            status: 200,
+            community
+        });
+    } catch (err) { }
+};
+
+
+
+// GET ALL COMMUNITIES (PLURAL)
+export const getCommunities = async (req, res) => {
     const { token } = req.params;
 
     // authenticating the user
