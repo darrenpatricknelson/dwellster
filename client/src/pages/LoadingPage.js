@@ -7,7 +7,11 @@ import Loading from '../components/Loading.js';
 
 export default function LoadingPage({ isLoggedIn }) {
 
-    if (!isLoggedIn) return <Navigate to="/authentication" />;
+    if (!isLoggedIn) {
+        return <Navigate to="/authentication" />;
+    } else if (isLoggedIn) {
+        return <Navigate to="/home" />;
+    }
     return (
         <Loading />
     );

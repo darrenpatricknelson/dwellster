@@ -395,3 +395,9 @@ UPDATE: Updated the loading state
     - Created a loading page to display full page loading state
     - Left the loading.js as a component and no longer a page
     - Some minor clean-ups around other files
+
+### Commit #59 
+BUG: Fixed the loading page navigation
+    - Was not being redirected to the respective pages
+    - User would hang on the loading page
+    - Added an else if statement to correct this bug
