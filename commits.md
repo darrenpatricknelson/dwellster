@@ -458,4 +458,10 @@ FEAT: New Feature - adding a new blog
             - Changed the title of the  blogShcema from 'user' to 'blog'
             - type is still === object
 
-
+### Commit #68
+UPDATE: Update to CommunityBlogs.js and Blogs.js
+    - Updated CommunityBlogs.js to display the blogs in the singular card form
+    - Passed the blog down through to the Blog.js card component to display certain information
+    - Created a button variable inside communityBlogs that is basically a button
+    - Passed the button down as a prop to display at the bottom of the card if the user is an admin
+    - This button will be used to delete the blog

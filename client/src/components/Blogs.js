@@ -4,24 +4,22 @@
 
 // styles
 import styles from '../styles/Blogs.module.css';
-import { Warning } from './Buttons.js';
 
 
 // Blog Card
-export const Card = ({ isAdmin }) => {
+export const Card = ({ isAdmin, blog, button }) => {
     return (
         <div className={styles.card}>
             <div className={styles.header}>
-                <h3>(Blog title)</h3>
-                {isAdmin && <Warning text='Delete' />}
+                <h3>{blog.title}</h3>
             </div>
             <div className={styles.body}>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque suscipit illo reiciendis quo nemo officiis unde facere totam sed, iste eum culpa quam nihil aliquam itaque id numquam aliquid fugiat saepe enim maiores! Eaque rem accusamus voluptatibus, repudiandae dignissimos tempore ipsa nisi eveniet animi mollitia laudantium reprehenderit porro at quasi.</p>
+                <p>{blog.description}</p>
             </div>
             <div className={styles.blog_interaction}>
-                <p>(5) likes/ (5) comments</p>
-                <p>Posted on (date)</p>
+                <p>{blog.likes.length} likes/ {blog.comments.length} comments</p>
             </div>
+            {isAdmin && button}
         </div>
     );
 
