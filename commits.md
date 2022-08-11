@@ -465,3 +465,7 @@ UPDATE: Update to CommunityBlogs.js and Blogs.js
     - Created a button variable inside communityBlogs that is basically a button
     - Passed the button down as a prop to display at the bottom of the card if the user is an admin
     - This button will be used to delete the blog
+
+### Commit #68
+BUG: Add blog button displaying for all
+    - Add blog button displaying for users that are not admins

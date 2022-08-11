@@ -55,11 +55,12 @@ export default function CommunityPage({ isLoggedIn }) {
     if (!isLoggedIn) return <Navigate to="/authentication" />;
     return (
         <Layout page='Community'>
-            <div className={styles.button_AddBlog}>
-                <a href={`/home/community/add/${communityTitle}`}>
-                    <Primary text='What are you thinking at the moment? Create a new Blog post here!' />
-                </a>
-            </div>
+            {user.isAdmin &&
+                <div className={styles.button_AddBlog}>
+                    <a href={`/home/community/add/${communityTitle}`}>
+                        <Primary text='What are you thinking at the moment? Create a new Blog post here!' />
+                    </a>
+                </div>}
 
             <div className={styles.clear_Float}>
                 {!community || community.blogs.length === 0 ? <h3>There are currently no available blogs in this community</h3> :
