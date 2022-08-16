@@ -17,21 +17,43 @@ export default function Join({ isLoggedIn }) {
     const { user } = useUserContext();
     const [title, setTitle] = useState('');
     const [communityKey, setCommunityKey] = useState('');
+    const [errorVal, setErrorVal] = useState('');
+    const [successVal, setSuccessVal] = useState('');
 
     // an admin is trying to create a new community
     const handleCreateCommunity = async (e) => {
         e.preventDefault();
         const token = sessionStorage.getItem('token');
 
+        // form validations
+        if (!title) {
+            return setErrorVal('Please enter a title');
+        }
+
+        if (!communityKey) {
+            return setErrorVal('Please enter a community key');
+        }
+
+        // create payload
         const payload = {
             'token': token,
             'title': title,
             'communityKey': communityKey
         };
 
+        // make request
         const data = await createNewCommunity(payload);
 
-        console.log(data);
+        // error validation
+        if (data.status === 400) {
+            return setErrorVal(data.err);
+        }
+
+        // clear any errors and set success message
+        setErrorVal('');
+        setTitle('');
+        setCommunityKey('');
+        setSuccessVal(data.message);
     };
 
     // a user is trying to join a new community
@@ -39,14 +61,38 @@ export default function Join({ isLoggedIn }) {
         e.preventDefault();
         const token = sessionStorage.getItem('token');
 
+        // form validations
+        if (!communityKey) {
+            return setErrorVal('Please enter a community key');
+        }
+
+        // create payload
         const payload = {
             'token': token,
             'communityKey': communityKey
         };
 
+        // make request
         const data = await joinCommunity(payload);
 
-        console.log(data);
+        // error validation
+        if (data.status === 400) {
+            return setErrorVal(data.err);
+        }
+
+        if (data.status === 401) {
+            return setErrorVal(data.err);
+        }
+
+
+        if (data.status === 404) {
+            return setErrorVal(data.err);
+        }
+
+        // clear any errors and set success message
+        setErrorVal('');
+        setCommunityKey('');
+        setSuccessVal(data.message);
     };
     if (!isLoggedIn) return <Navigate to="/authentication" />;
     return (
@@ -62,6 +108,12 @@ export default function Join({ isLoggedIn }) {
                                 <div className={styles.button}></div>
                                 <Primary text={`Submit`} />
                             </div>
+                            <div className={styles.errorVal}>{errorVal}</div>
+                            <div className={styles.successVal}>
+                                {successVal}<br />
+                                <p>Head to the{' '}
+                                    <span className={styles.link}><a href={`/home/community/`}>community page</a></span> {' '}to check it out!</p>
+                            </div>
                         </form>
                         :
                         <form onSubmit={handleJoinCommunity}>
@@ -69,6 +121,8 @@ export default function Join({ isLoggedIn }) {
                             <div className={styles.button}>
                                 <Primary text={`Submit`} />
                             </div>
+                            <div className={styles.errorVal}>{errorVal}</div>
+                            <div className={styles.successVal}>{successVal}</div>
                         </form>
                     }
                 </div>

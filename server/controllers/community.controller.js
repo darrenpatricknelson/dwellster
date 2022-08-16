@@ -140,6 +140,7 @@ export const createCommunity = async (req, res) => {
         // response
         res.status(200).send({
             status: 200,
+            message: 'Your new community has been created',
             community
         });
     } catch (err) {
@@ -188,7 +189,7 @@ export const joinCommunity = async (req, res) => {
         // create a user
         const member = user[0].email;
 
-        const existingMember = await Community.find({ member });
+        const existingMember = await Community.findOne({ member });
 
         if (existingMember) {
             res.status(400).json({
@@ -210,12 +211,13 @@ export const joinCommunity = async (req, res) => {
 
         res.status(200).send({
             status: 200,
+            message: 'You have successfully joined this community',
             newCommunity
         });
     } catch (err) {
-        res.status(400).json({
-            status: 400,
-            errors: err
+        res.status(401).json({
+            status: 401,
+            err: 'Community key is incorrect'
         });
     }
 };

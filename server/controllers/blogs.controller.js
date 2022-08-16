@@ -117,8 +117,6 @@ export const deleteBlogPost = async (req, res) => {
                 community
             });
         }
-
-
     } catch (err) {
         console.log(err);
         res.status(400).json({

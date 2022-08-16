@@ -26,8 +26,6 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-
-
   // function that deals with a user signing up/ logging in
   const handleAuth = async (user) => {
     console.log(user);

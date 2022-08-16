@@ -20,3 +20,16 @@
   width: 100px;
   margin: auto;
 }
+.errorVal {
+  margin: 20px auto 0;
+  text-align: center;
+  color: #e34974;
+}
+.successVal {
+  margin: 20px auto 0;
+  text-align: center;
+  color: #4bb543;
+}
+.link {
+  text-decoration: underline;
+}

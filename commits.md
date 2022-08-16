@@ -478,3 +478,9 @@ ASSIST: Pushing code to github for assistance
 FEAT: Deleting blogs is now functional
     - The admin can now delete blogs
     - Blogs will be deleted from the community collection as well as the blogs collection
+
+### Commit #71
+UPDATE: Updated the join/create new community route
+    - Displays different text depending if the user is and admin or now
+    - Updated the response from the server to display text if the user or admin has joined/ created a new community or not
+    - Added a 'version2.0Requirements.md' file to document what must still be done
