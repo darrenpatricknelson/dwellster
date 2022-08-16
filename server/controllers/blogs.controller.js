@@ -66,10 +66,15 @@ export const createBlogPost = async (req, res) => {
 
 // DELETE A BLOG POST
 export const deleteBlogPost = async (req, res) => {
-    const { token, blogID, communityKey } = req.body;
+    const { token, communityKey, blog, id } = req.body;
+
+    // will use the token to identify the user, 
+    // the id to get the blog in the blogs array 
+    // communityKey to get the community 
+    // and blogID to delete the blog
 
     // authenticating the user
-    const user = await User.find({ token });
+    const user = await User.findOne({ token });
 
     // check if the user exists
     if (!user) {
@@ -80,7 +85,7 @@ export const deleteBlogPost = async (req, res) => {
     }
 
     // check if the user is an admin
-    if (!user.admin) {
+    if (!user.isAdmin) {
         res.status(404).json({
             status: 404,
             err: 'User is not an admin'
@@ -89,17 +94,29 @@ export const deleteBlogPost = async (req, res) => {
 
     // user is an admin so now we can delete a blog post
     try {
-        const blog = await Blog.findById(blogID);
-
         // delete the blog using function
-        const community = deleteBlog(blog, communityKey);
+        const response = await deleteBlog(communityKey, blog, id);
 
-        // response
-        res.status(200).send({
-            status: 200,
-            community
-        });
+        // if the response is true
+        if (!response) {
+            console.log(response);
+            res.status(400).json({
+                status: 400,
+                err: 'Failed to delete blog'
+            });
+        } else {
+            // fetch the updated community to return
+            const community = await Community.findOne({ communityKey });
+            // response
+            res.status(200).json({
+                status: 200,
+                community
+            });
+        }
+
+
     } catch (err) {
+        console.log(err);
         res.status(400).json({
             status: 400,
             err

@@ -1,5 +1,5 @@
 // imports
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useCommunityContext } from '../hooks/useCommunityContext.js';
 import { useUserContext } from '../hooks/useUserContext.js';
@@ -15,15 +15,19 @@ import { Primary, Warning } from '../components/Buttons.js';
 import Layout from '../components/Layout.js';
 
 // api requests
-import { getCommunity } from '../apiRequests/requests.api.js';
+import { deleteBlog, getCommunity } from '../apiRequests/requests.api.js';
 
 // styles 
+import blogStyles from '../styles/Blogs.module.css';
 import styles from '../styles/Community.module.css';
 
 export default function CommunityPage({ isLoggedIn }) {
     const { communityTitle } = useParams();
     const { user } = useUserContext();
     const { community, comDispatch } = useCommunityContext();
+    // states
+    const [errorVal, setErrorVal] = useState();
+    const [successVal, setSuccessVal] = useState();
 
 
 
@@ -46,9 +50,35 @@ export default function CommunityPage({ isLoggedIn }) {
         var { blogs } = community;
     }
 
-    const deleteBlog = (e, id) => {
+    const deleteBlogRequest = async (e, blog) => {
         e.preventDefault();
-        console.log(id);
+
+
+        // construct the variables for the payload
+        const token = sessionStorage.getItem('token');
+        const communityKey = sessionStorage.getItem('communityKey');
+        const id = blog._id;
+
+        const payload = {
+            token, communityKey, blog, id
+        };
+
+
+        const data = await deleteBlog(payload);
+
+        // error validation 
+        if (data.status === 400) {
+            console.log(data);
+            return setErrorVal(data.err);
+        }
+
+        // success validation
+        setSuccessVal(data.message);
+
+        setTimeout(() => {
+            setSuccessVal('');
+        }, 3000);
+        console.log(data);
     };
 
 
@@ -67,12 +97,12 @@ export default function CommunityPage({ isLoggedIn }) {
 
                     <Container>
                         <Row>
-                            {blogs.map((blog) => {
+                            {blogs.map((blog, idx) => {
                                 const button = <Warning onClick={(e) => {
-                                    deleteBlog(e, blog._id);
+                                    deleteBlogRequest(e, blog);
                                 }} text='Delete' />;
                                 return (
-                                    <Col sm={12} md={6} lg={4} xl={3} >
+                                    <Col key={idx} sm={12} md={6} lg={4} xl={3} >
                                         <Card isAdmin={user.isAdmin} key={blog._id} blog={blog.blog} button={button} />
                                     </Col>
                                 );
@@ -81,8 +111,10 @@ export default function CommunityPage({ isLoggedIn }) {
                         </Row>
                     </Container>
 
-
                 }
+                <div className={blogStyles.errorVal}>{errorVal}</div>
+                <div className={blogStyles.successVal}>{successVal}</div>
+
             </div>
 
         </Layout>

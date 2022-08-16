@@ -437,7 +437,7 @@ UPDATE: Added/ Remove community key from sessionStorage
 ### Commit #66
 UPDATE: Removed the stringfy function
     - Previous commit added the communityKey to the sessionStorage while stringfying the data
-    - Removed the stringfy function inorder to skip the parsing step when retrieving data
+    - Removed the stringfy function in order to skip the parsing step when retrieving data
 
 ### Commit #67
 FEAT: New Feature - adding a new blog
@@ -469,3 +469,7 @@ UPDATE: Update to CommunityBlogs.js and Blogs.js
 ### Commit #68
 BUG: Add blog button displaying for all
     - Add blog button displaying for users that are not admins
+
+### Commit #69
+ASSIST: Pushing code to github for assistance 
+    - Need Evans help solving my delete query issue

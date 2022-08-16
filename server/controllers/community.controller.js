@@ -227,10 +227,6 @@ export const joinCommunity = async (req, res) => {
 // 
 // adding a blog to a community
 export const addBlog = async (blog, communityKey) => {
-    console.log(blog);
-    console.log('add blog function has started');
-
-
     // check if the community exists and is they have access
     const community = await Community.findOne({ communityKey });
     // check if the community exists
@@ -256,7 +252,7 @@ export const addBlog = async (blog, communityKey) => {
 
         return true;
     } catch (err) {
-        return err;
+        return false;
     }
 };
 
@@ -264,9 +260,10 @@ export const addBlog = async (blog, communityKey) => {
 // 
 // 
 // deleting a blog to a community
-export const deleteBlog = async ({ blog, communityKey }) => {
+export const deleteBlog = async (communityKey, blog) => {
     // check if the community exists and is they have access
-    const community = await Community.find({ communityKey });
+
+    const community = await Community.findOne({ communityKey });
 
     // check if the community exists
     if (!community) {
@@ -277,21 +274,36 @@ export const deleteBlog = async ({ blog, communityKey }) => {
     }
 
     // create an id from the found community
-    const id = community._id;
+    const title = blog.blog.title;
+    console.log(blog._id);
 
     // if the community exists, update its members
     try {
         // add the new member to the members array
-        const newCommunity = await Community.updateOne(
-            { _id: id },
+        const response = await Community.updateOne(
+            { _id: community._id },
             {
-                $pull: { blogs: { blog } }
+                $pull: { blogs: { blog: { title } } }
             }
         );
 
-        // return the data
-        return newCommunity;
+        console.log(response);
+
+        // deconstruct the response 
+        // if it was not acknowledged, return false
+        if (!response.acknowledged) {
+            return false;
+        }
+
+        // if nothing was modified, return false
+        if (response.modifiedCount === 0) {
+            return false;
+        }
+
+        // else return true
+        return true;
     } catch (err) {
-        return err;
+        console.log(err);
+        return false;
     }
 };

@@ -94,3 +94,18 @@ export const addNewBlog = async (payload) => {
     return data;
 
 };
+
+// deleting a blog
+export const deleteBlog = async (payload) => {
+    const response = await fetch(`/blog/delete`, {
+        method: 'DELETE',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    });
+    const data = await response.json();
+
+    return data;
+
+};
