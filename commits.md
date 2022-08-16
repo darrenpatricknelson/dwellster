@@ -473,3 +473,8 @@ BUG: Add blog button displaying for all
 ### Commit #69
 ASSIST: Pushing code to github for assistance 
     - Need Evans help solving my delete query issue
+
+### Commit #70
+FEAT: Deleting blogs is now functional
+    - The admin can now delete blogs
+    - Blogs will be deleted from the community collection as well as the blogs collection

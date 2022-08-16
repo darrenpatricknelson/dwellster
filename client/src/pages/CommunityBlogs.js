@@ -57,13 +57,13 @@ export default function CommunityPage({ isLoggedIn }) {
         // construct the variables for the payload
         const token = sessionStorage.getItem('token');
         const communityKey = sessionStorage.getItem('communityKey');
-        const id = blog._id;
 
+        // create the payload
         const payload = {
-            token, communityKey, blog, id
+            token, communityKey, blog
         };
 
-
+        // make the request
         const data = await deleteBlog(payload);
 
         // error validation 
@@ -74,10 +74,13 @@ export default function CommunityPage({ isLoggedIn }) {
 
         // success validation
         setSuccessVal(data.message);
-
+        // remove the success message after 3 seconds
         setTimeout(() => {
             setSuccessVal('');
         }, 3000);
+
+        // update the context 
+        comDispatch({ type: 'GET_COMMUNITY', payload: data.community });
         console.log(data);
     };
 

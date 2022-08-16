@@ -273,32 +273,11 @@ export const deleteBlog = async (communityKey, blog) => {
         });
     }
 
-    // create an id from the found community
-    const title = blog.blog.title;
-    console.log(blog._id);
-
     // if the community exists, update its members
     try {
-        // add the new member to the members array
-        const response = await Community.updateOne(
-            { _id: community._id },
-            {
-                $pull: { blogs: { blog: { title } } }
-            }
-        );
-
-        console.log(response);
-
-        // deconstruct the response 
-        // if it was not acknowledged, return false
-        if (!response.acknowledged) {
-            return false;
-        }
-
-        // if nothing was modified, return false
-        if (response.modifiedCount === 0) {
-            return false;
-        }
+        // we want to delete a specific blog so we'll use its id
+        await community.blogs.id(blog._id).remove();
+        const response = await community.save();
 
         // else return true
         return true;

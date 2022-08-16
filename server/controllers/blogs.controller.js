@@ -66,7 +66,7 @@ export const createBlogPost = async (req, res) => {
 
 // DELETE A BLOG POST
 export const deleteBlogPost = async (req, res) => {
-    const { token, communityKey, blog, id } = req.body;
+    const { token, communityKey, blog } = req.body;
 
     // will use the token to identify the user, 
     // the id to get the blog in the blogs array 
@@ -95,7 +95,7 @@ export const deleteBlogPost = async (req, res) => {
     // user is an admin so now we can delete a blog post
     try {
         // delete the blog using function
-        const response = await deleteBlog(communityKey, blog, id);
+        const response = await deleteBlog(communityKey, blog);
 
         // if the response is true
         if (!response) {
@@ -105,11 +105,15 @@ export const deleteBlogPost = async (req, res) => {
                 err: 'Failed to delete blog'
             });
         } else {
+            // delete the blog from the blogs database
+            const title = blog.blog.title;
+            await Blog.deleteOne({ title });
             // fetch the updated community to return
             const community = await Community.findOne({ communityKey });
             // response
             res.status(200).json({
                 status: 200,
+                message: 'Blog deleted successfully!',
                 community
             });
         }
