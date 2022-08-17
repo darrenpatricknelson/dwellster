@@ -4,7 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
-import { dirname } from 'path';
+import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import authRouter from './routes/auth.routes.js';
 import blogRouter from './routes/blog.routes.js';

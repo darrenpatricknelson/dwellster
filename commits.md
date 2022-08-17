@@ -505,3 +505,7 @@ DEPLOY: Prepping for deployment
 ### Commit #75
 DEPLOY: Prepping for deployment 
     - Updated frontend package.json file
+
+### Commit #76
+DEPLOY: Prepping for deployment 
+    - Imported path in server.js
