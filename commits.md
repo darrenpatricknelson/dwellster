@@ -484,3 +484,9 @@ UPDATE: Updated the join/create new community route
     - Displays different text depending if the user is and admin or now
     - Updated the response from the server to display text if the user or admin has joined/ created a new community or not
     - Added a 'version2.0Requirements.md' file to document what must still be done
+
+### Commit #72
+UPDATE: Updated the authentication process
+    - Added new validations to the frontend
+    - Added a validation function that can be tested 
+    - Improved the backend to handle the validations better

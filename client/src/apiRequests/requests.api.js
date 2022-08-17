@@ -64,7 +64,7 @@ export const createNewCommunity = async (payload) => {
 // user joining a community
 export const joinCommunity = async (payload) => {
     const response = await fetch('/community/join', {
-        method: 'POST',
+        method: 'PATCH',
         headers: {
             'content-type': 'application/json'
         },

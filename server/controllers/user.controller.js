@@ -13,12 +13,10 @@ Requests will be made to this endpoint when:
 
 // handle errors function
 export const handleErrors = (err) => {
-    console.log(err.message, err.code);
     let errors = {
         email: '',
         password: ''
     };
-
     // duplicate error code
     if (err.code === 11000) {
         errors.email = "This email is already registered, please login";
@@ -26,12 +24,13 @@ export const handleErrors = (err) => {
     }
 
     //  validation  errors
-    if (err.message.includes('user validation failed')) {
+    if (err._message === 'Users validation failed') {
         Object.values(err.errors).forEach(({ properties }) => {
-            errors[properties.path] = properties.message;
+            errors[properties.path] = true;
         });
     }
 
+    // return the errors
     return errors;
 };
 

@@ -33,11 +33,11 @@ const App = () => {
 
     sessionStorage.setItem('auth', true);
     const state = sessionStorage.getItem('auth');
-    sessionStorage.setItem('token', user.user.token);
-    sessionStorage.setItem('user', user.user.name);
-    dispatch({ type: 'GET_USER', payload: user.user });
+    sessionStorage.setItem('token', user.token);
+    sessionStorage.setItem('user', user.name);
+    dispatch({ type: 'GET_USER', payload: user });
     // get communities
-    const communities = await getCommunity(user.user.token);
+    const communities = await getCommunity(user.token);
     comDispatch({ type: 'GET_COMMUNITY', payload: communities.community });
     setIsLoading(false);
     setIsLoggedIn(state);

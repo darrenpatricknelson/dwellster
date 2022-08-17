@@ -14,9 +14,55 @@ import styles from '../styles/auth.module.css';
 
 // api request handlers
 import { userPostRequest } from '../apiRequests/requests.api.js';
-;
 
-const Authentication = ({ state, handleAuth, test, isLoggedIn }) => {
+// i want to make a testable function 
+export const handleValidation = (url, name, surname, email, password) => {
+
+    // create a returnable error object
+    const errors = {
+        name: false,
+        surname: false,
+        email: false,
+        password: false
+    };
+
+    // the following validations only need to be checked if the user is signing up
+    if (url === 'signup') {
+        // checking validations
+        // my validations could be stricter but for the sake of the task, it is just to make sure that they are present so that the user knows what went wrong 
+        // name
+        if (!name) {
+            errors.name = true;
+        } else {
+            errors.name = false;
+        }
+        // surname
+        if (!surname) {
+            errors.surname = true;
+        } else {
+            errors.surname = false;
+        }
+    }
+
+    // the following validations need to be checked when the user is logging in 
+    // email
+    if (!email) {
+        errors.email = true;
+    } else {
+        errors.email = false;
+    }
+    // password
+    if (!password) {
+        errors.password = true;
+    } else {
+        errors.password = false;
+    }
+
+    console.log(errors);
+    return errors;
+};
+
+const Authentication = ({ handleAuth, isLoggedIn }) => {
     // create states
     const [isLoggingIn, setIsLoggingIn] = useState(true);
     const [isSigningUp, setIsSigningUp] = useState(false);
@@ -36,7 +82,10 @@ const Authentication = ({ state, handleAuth, test, isLoggedIn }) => {
     const [isLoading, setIsLoading] = useState(false);
     // type of the password field 
     const [type, setType] = useState('password');
+
+
     // function changes the state
+    // this is used to switch the user being the log in form and the sign up form
     const handleState = () => {
         setErrorVal(false);
         setIsLoggingIn(prev => !prev);
@@ -46,17 +95,41 @@ const Authentication = ({ state, handleAuth, test, isLoggedIn }) => {
     // function handles the users form submission request
     const handleSubmit = async (e, url) => {
         e.preventDefault();
+        setIsLoading(true);
 
-        // checking validations
-        // my validations could be stricter but for the sake of the task, it is just to make sure that the name exist
-        if (!email || !password) {
-            setErrorVal('Please enter in your details');
+        // validation function
+        const errors = handleValidation(url, name, surname, email, password);
+
+        // name
+        if (errors.name) {
+            setNameError('Please enter your name');
+        } else {
+            setNameError('');
+        }
+        // surname
+        if (errors.surname) {
+            setSurnameError('Please enter your surname');
+        } else {
+            setSurnameError('');
+        }
+        // email
+        if (errors.email) {
+            setEmailError('Please enter a valid email');
+        } else {
+            setEmailError('');
+        }
+        // password
+        if (errors.password) {
+            setPasswordError('Please enter a valid 6 character password');
+        } else {
+            setPasswordError('');
+        }
+        // if there are any errors, show an oops message
+        if (errors.name || errors.surname || errors.email || errors.password) {
+            setErrorVal('Oops, something has gone wrong');
+            setIsLoading(false);
             return;
         }
-
-        // Its a loading animation but this whole api request search is to fast to actual properly enjoy it. Maybe on your side you will be able to see it 
-        // quite sad :(
-        // setIsLoading(true);
 
 
         //  create payload
@@ -70,50 +143,38 @@ const Authentication = ({ state, handleAuth, test, isLoggedIn }) => {
 
         // api request
         const data = await userPostRequest(payload, `/auth/${url}`);
-
+        console.log(data);
         // the following is error validations based off of the status code I added to the response from the backend
         if (data.status === 400) {
             setIsLoading(false);
             setEmailError('');
             setPasswordError('');
-            if (data.errors.email) { setEmailError(data.errors.email); }
-            if (data.errors.password) { setPasswordError(data.errors.password); }
+            setErrorVal('Oops, something has gone wrong');
+            if (data.errors.email) { setEmailError('Please enter a valid email'); }
+            if (data.errors.password) { setPasswordError('Please enter a valid 6 character password'); }
             return;
         }
 
+        // incorrect email
         if (data.status === 401) {
             setIsLoading(false);
-            setEmailError('');
+            setEmailError('Incorrect email');
             setPasswordError('');
             setErrorVal(data.error);
             return;
         }
 
+        // incorrect password
         if (data.status === 402) {
             setIsLoading(false);
-            setEmailError('');
-            setPasswordError('');
-            setErrorVal(data.error);
+            setPasswordError(data.error);
+            setErrorVal('Oops, something has gone wrong');
             return;
         }
 
-        if (data.status === 403) {
-            setIsLoading(false);
-            setEmailError('');
-            setPasswordError('');
-            setErrorVal(data.error);
-            return;
-        }
+        // if all validations passed. We sign the user in
+        handleAuth(data.user);
 
-        // if no errors, update states and lost the user in
-        setErrorVal(null);
-        setName('');
-        setSurname('');
-        setEmail('');
-        setPassword('');
-        setIsLoading(false);
-        // console.log(data);
-        return handleAuth(data);
     };
 
     if (isLoggedIn) return <Navigate to="/home" />;

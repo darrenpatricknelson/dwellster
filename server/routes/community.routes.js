@@ -27,7 +27,7 @@ communityRouter.post('/create', createCommunity);
 
 // JOIN COMMUNITY POST REQUEST
 //  request made when a user is signing up
-communityRouter.post('/join', joinCommunity);
+communityRouter.patch('/join', joinCommunity);
 
 
 // export
