@@ -490,3 +490,6 @@ UPDATE: Updated the authentication process
     - Added new validations to the frontend
     - Added a validation function that can be tested 
     - Improved the backend to handle the validations better
+
+### Commit #73
+NEW: Added a README.md file 
