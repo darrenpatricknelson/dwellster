@@ -501,3 +501,7 @@ DEPLOY: Prepping for deployment
     - Updated frontend package.json file
     - Updated the server.js file in the backend
     - Removed a comment in the user controller file
+
+### Commit #75
+DEPLOY: Prepping for deployment 
+    - Updated frontend package.json file
