@@ -509,3 +509,8 @@ DEPLOY: Prepping for deployment
 ### Commit #76
 DEPLOY: Prepping for deployment 
     - Imported path in server.js
+
+### Commit #77
+DEPLOY: Prepping for deployment 
+    - Update to README.md file
+        - Added link to vercel website
