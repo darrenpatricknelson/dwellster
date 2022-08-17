@@ -493,3 +493,11 @@ UPDATE: Updated the authentication process
 
 ### Commit #73
 NEW: Added a README.md file 
+
+### Commit #74
+DEPLOY: Prepping for deployment 
+    - Create files for deployment
+        - vercel.json
+    - Updated frontend package.json file
+    - Updated the server.js file in the backend
+    - Removed a comment in the user controller file

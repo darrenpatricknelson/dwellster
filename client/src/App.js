@@ -85,7 +85,7 @@ const App = () => {
         breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
         minBreakpoint="xxs"
       >
-        <BrowserRouter>
+        <BrowserRouter basename='/'>
           <Routes>
             <Route path="/" element={<div className="loading_container"><LoadingPage isLoggedIn={isLoggedIn} /> </div>} />
             <Route path="/authentication" element={<Authentication handleAuth={handleAuth} isLoggedIn={isLoggedIn} />} />

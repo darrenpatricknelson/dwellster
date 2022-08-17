@@ -1,12 +1,24 @@
-import dotenv from 'dotenv';
-dotenv.config();
-import express from 'express';
-import cors from 'cors';
-import mongoose from 'mongoose';
+// imports 
 import bodyParser from 'body-parser';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import express from 'express';
+import mongoose from 'mongoose';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import authRouter from './routes/auth.routes.js';
-import communityRouter from './routes/community.routes.js';
 import blogRouter from './routes/blog.routes.js';
+import communityRouter from './routes/community.routes.js';
+
+// configs
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+dotenv.config();
+
+// deployment config
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config({ path: '/server/.env' });
+}
 
 // initialize
 const app = express();
@@ -19,13 +31,6 @@ app.use(cors());
 app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
-});
-
-// initial welcome
-app.get('/', (req, res) => {
-    res.json({
-        message: 'Hello'
-    });
 });
 
 // routes
@@ -54,3 +59,11 @@ mongoose
     .catch(error => {
         console.log(error);
     });
+
+// static files (build of your frontend)
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../frontend', 'build')));
+    app.get('/*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../frontend', 'build', 'index.html'));
+    });
+}

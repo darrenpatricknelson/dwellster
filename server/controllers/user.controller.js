@@ -125,9 +125,6 @@ export const loginPostRequest = async (req, res) => {
     });
 };
 
-// HI moderator, please note that I am aware that the following api requests need to be in a different controller
-// the route handler for this controller is ('/auth/..') and these are not authorization requests
-// I would put it in another controller and have a different route handler ('/api/...') but for the sake tof the task, I have left them here :)
 // 
 // 
 // User adding and deleting tasks
