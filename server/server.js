@@ -32,23 +32,6 @@ app.use((req, res, next) => {
     next();
 });
 
-// connect to db
-mongoose
-    .connect(process.env.MONGO_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
-    .then(() => {
-        // listening on port
-        const PORT = process.env.PORT;
-        app.listen(PORT, () => {
-            console.log(`Connected to DB and listening on port ${PORT}!`);
-        });
-    })
-    .catch(error => {
-        console.log(error);
-    });
-
 // routes
 // 3 routes created: 
 // authRoute for authentication
@@ -65,12 +48,38 @@ app.use('/community', communityRouter);
 app.use('/blog', blogRouter);
 
 
+// connect to db
+mongoose
+    .connect(process.env.MONGO_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(() => {
+        // listening on port
+        const PORT = process.env.PORT || 3001;
+        app.listen(PORT, () => {
+            console.log(`Connected to DB and listening on port ${PORT}!`);
+        });
+    })
+    .catch(error => {
+        console.log(error);
+    });
 
 
 // static files (build of my frontend)
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client', 'build')));
-    app.get('/*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client', 'build', 'index.html'));
+    app.use(express.static(path.join(__dirname, '../client/build')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../client/build/index.html'),
+            (err) => {
+                if (err) {
+                    res.status(500).json({
+                        err
+                    });
+                }
+            });
     });
 }
+
+// export
+export default app;

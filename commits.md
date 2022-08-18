@@ -523,3 +523,9 @@ DEPLOY: Prepping for deployment
         - Removed a forward slash at the end of the deployed link
     - Update to README.md
         - Added some features that need be added in future versions
+
+### Commit #79
+DEPLOY: Prepping for deployment 
+    - Update to server.js file
+        - Added an 'export default app' to the end of the file
+    - Removed PORT from .env file
