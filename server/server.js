@@ -26,11 +26,14 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
+
 // the following middleware outputs information about the request in the terminal
 app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
 });
+
+
 
 // routes
 // 3 routes created: 
@@ -69,16 +72,16 @@ mongoose
 // static files (build of my frontend)
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/build/index.html'),
-            (err) => {
-                if (err) {
-                    res.status(500).json({
-                        err
-                    });
-                }
-            });
-    });
+    // app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'),
+        (err) => {
+            if (err) {
+                res.status(500).json({
+                    err
+                });
+            }
+        });
+    // });
 }
 
 // export

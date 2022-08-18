@@ -529,3 +529,6 @@ DEPLOY: Prepping for deployment
     - Update to server.js file
         - Added an 'export default app' to the end of the file
     - Removed PORT from .env file
+
+### Commit #80
+DEPLOY: Prepping for deployment 
