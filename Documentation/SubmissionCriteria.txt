@@ -1,0 +1,12 @@
+1a. 
+    - I did not receive any suggestions from the reviewer that reviewed part 1 of my capstone project. I'm pretty sure they barely reviewed it properly. I think my UI is somewhat attractive. UX and UI is not my strong suit but theres definitely some thought in the look and feel of this project.
+1b. 
+    - 
+1c.
+    - The reviewer can run my application locally by following the installation instructions in the README.md file in my root directory
+1d.
+    - I think my file structure is well organized and easy to understand
+1e. 
+    - I think my project is commented well
+1f.
+    - I think my code is modular

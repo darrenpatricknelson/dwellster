@@ -554,3 +554,6 @@ CLEAN-UP: Clean up
 ### Commit #84
 DEPLOY: Prepping for deployment 
     - Removed 'homepage' from client package.json
+
+### Commit #85
+HYPERIONDEV: Prepping for task submission 
