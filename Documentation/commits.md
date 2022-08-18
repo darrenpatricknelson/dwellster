@@ -560,3 +560,10 @@ HYPERIONDEV: Prepping for task submission
 
 ### Commit #86
 HYPERIONDEV: Prepping for task submission 
+
+### Commit #87
+DEPLOY: Prepping for deployment
+    - Moving away from Heroku back to vercel
+    - Removed heroku postbuild script
+    - Added code for vercel
+    - Added vercel.json
