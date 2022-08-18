@@ -536,3 +536,8 @@ DEPLOY: Prepping for deployment
 ### Commit #81
 DEPLOY: Prepping for deployment 
     - Deleted build file
+
+### Commit #82
+DEPLOY: Prepping for deployment 
+    - Update to vercel config file
+        - Removed /build from the client 
