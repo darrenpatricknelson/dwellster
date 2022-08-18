@@ -541,3 +541,12 @@ DEPLOY: Prepping for deployment
 DEPLOY: Prepping for deployment 
     - Update to vercel config file
         - Removed /build from the client 
+
+### Commit #83
+CLEAN-UP: Clean up
+    - Change 'Business requirements' folder name to 'Documentation
+    - Moved documentation files in the documentation folder
+    - Updated the .gitignore file
+    - Prepping for deployment to Heroku and not vercel
+        - Removed vercel.json file
+        - Added a heroku postbuild script to the server package.json file 

@@ -53,3 +53,6 @@ For now, my project simply meets all the submission criteria :) .
 
 ### Link to my deployed app
 - https://dwellster.vercel.app/
+
+### Documentation
+- All the necessary documentation is available in the Business requirements folder
