@@ -532,3 +532,7 @@ DEPLOY: Prepping for deployment
 
 ### Commit #80
 DEPLOY: Prepping for deployment 
+
+### Commit #81
+DEPLOY: Prepping for deployment 
+    - Deleted build file
