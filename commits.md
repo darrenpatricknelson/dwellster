@@ -514,3 +514,12 @@ DEPLOY: Prepping for deployment
 DEPLOY: Prepping for deployment 
     - Update to README.md file
         - Added link to vercel website
+
+### Commit #78
+DEPLOY: Prepping for deployment 
+    - Update to server.js file
+        - Made changes to align with my understanding for production
+    - Update to client package.json file
+        - Removed a forward slash at the end of the deployed link
+    - Update to README.md
+        - Added some features that need be added in future versions

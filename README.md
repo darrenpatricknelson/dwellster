@@ -23,7 +23,22 @@ Version 1.0 of this project has all the basic functionality required for a user 
         - Leaving a community 
         - Adding likes and comments to a blog post
 
-My project is not 100% complete, there are certain features missing that will be added an updated version of this project. For now, my project simply meets all the submission criteria.
+My project is not 100% complete, there are certain features missing that will be added an updated version of this project. 
+
+Features that should be added in future versions:
+- Improved loading states 
+- A better 'Add new blog' form 
+- Likes and comments
+- The ability to Update a blog
+- Viewing full blogs and not just blog cards
+- User profiles
+- Viewing members within a community
+- Admin removing members
+- Members leaving a community
+- Improve UX and UI
+- Improve app performance 
+
+For now, my project simply meets all the submission criteria :) .
 
 ### Installation instructions
 - Pull the code from my github repository

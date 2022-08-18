@@ -13,11 +13,10 @@ import communityRouter from './routes/community.routes.js';
 // configs
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-dotenv.config();
 
 // deployment config
 if (process.env.NODE_ENV !== 'production') {
-    dotenv.config({ path: '/server/.env' });
+    dotenv.config({ path: __dirname + '/.env' });
 }
 
 // initialize
@@ -33,22 +32,12 @@ app.use((req, res, next) => {
     next();
 });
 
-// routes
-// 3 routes created: 
-// authRoute for authentication
-// - This route works hand in hand with the user model and controller
-app.use('/auth', authRouter);
-// communityRouter
-// - This route works hand in hand with the community model and controller
-app.use('/community', communityRouter);
-// blogRoute
-// - This route works hand in hand with the blogs model and controller
-app.use('/blog', blogRouter);
-
-
 // connect to db
 mongoose
-    .connect(process.env.MONGO_URI)
+    .connect(process.env.MONGO_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
     .then(() => {
         // listening on port
         const PORT = process.env.PORT;
@@ -60,10 +49,28 @@ mongoose
         console.log(error);
     });
 
-// static files (build of your frontend)
+// routes
+// 3 routes created: 
+// authRoute for authentication
+// - This route works hand in hand with the user model and controller
+// app.use('/auth', path.join(__dirname, 'routes', 'auth.routes.js'));
+app.use('/auth', authRouter);
+// communityRouter
+// - This route works hand in hand with the community model and controller
+// app.use('/community', path.join(__dirname, 'routes', 'community.routes.js'));
+app.use('/community', communityRouter);
+// blogRoute
+// - This route works hand in hand with the blogs model and controller
+// app.use('/blog', path.join(__dirname, 'routes', 'blog.routes.js'));
+app.use('/blog', blogRouter);
+
+
+
+
+// static files (build of my frontend)
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../frontend', 'build')));
+    app.use(express.static(path.join(__dirname, '../client', 'build')));
     app.get('/*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../frontend', 'build', 'index.html'));
+        res.sendFile(path.join(__dirname, '../client', 'build', 'index.html'));
     });
 }
