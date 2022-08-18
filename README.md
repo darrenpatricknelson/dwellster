@@ -52,7 +52,7 @@ For now, my project simply meets all the submission criteria :) .
     - npm install (OR) npm ci (for a clean install)
 
 ### Link to my deployed app
-- https://dwellster.vercel.app/
+- (add link here)
 
 ### Documentation
 - All the necessary documentation is available in the Business requirements folder
