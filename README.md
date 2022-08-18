@@ -222,7 +222,25 @@ Features that should be added in future versions:
 - Improve UX and UI
 - Improve app performance 
 
+<<<<<<< HEAD
 For now, my project simply meets all the submission criteria :).
+=======
+For now, my project simply meets all the submission criteria :) .
+
+### Installation instructions
+- Pull the code from my github repository
+- To install all the backend packages
+    - Open a new terminal
+    - cd server
+    - npm install (OR) npm ci (for a clean install)
+- To install all the frontend packages
+    - Open a new terminal
+    - cd client
+    - npm install (OR) npm ci (for a clean install)
+
+### Link to my deployed app
+- (add link here)
+>>>>>>> 7288c03fc769caee3597c4c8b082420d92af3a62
 
 ### Documentation
 - All the necessary documentation is available in the Business requirements folder
