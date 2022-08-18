@@ -550,3 +550,7 @@ CLEAN-UP: Clean up
     - Prepping for deployment to Heroku and not vercel
         - Removed vercel.json file
         - Added a heroku postbuild script to the server package.json file 
+
+### Commit #84
+DEPLOY: Prepping for deployment 
+    - Removed 'homepage' from client package.json
