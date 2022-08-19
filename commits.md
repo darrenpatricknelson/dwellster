@@ -612,3 +612,7 @@ DEPLOY: Prepping for heroku deployment
 
 ### Commit #94
 DEPLOY: Prepping for heroku deployment
+
+### Commit #95
+DEPLOY: Prepping for heroku deployment
+    - Made devDependencies dependencies and change the start script for my backend
