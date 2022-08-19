@@ -1,6 +1,6 @@
 // This component will house every blog state
-// There are 3 blog states
-// CARD (a summary), BLOG (the full blog) and CLOUD (a state when adding a new blog)
+// There are 2 blog states
+// CARD (a summary) and BLOG (the full blog) 
 
 // styles
 import styles from '../styles/Blogs.module.css';
@@ -29,12 +29,5 @@ export const Card = ({ isAdmin, blog, button }) => {
 export const Blog = () => {
     return (
         <div>Full blog</div>
-    );
-};
-
-// Blog Cloud
-export const Cloud = () => {
-    return (
-        <div>Blog Cloud</div>
     );
 };

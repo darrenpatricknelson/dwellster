@@ -580,3 +580,11 @@ REBUILD: Massive rebuild
         - This is needed for heroku
     - Deleted the vercel.json file
     - Delete 'homepage' from the server package.json
+
+### Commit #89
+REBUILD: Rebuilt folder structure again
+    - Change folder structure again
+    - Made the app my root folder so now all the backend files are in my root folder
+    - Client folder remains the same
+    - Documentation folder ignored by git commits
+    - commits.md file is pushed to github
