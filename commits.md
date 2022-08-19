@@ -600,3 +600,12 @@ DEPLOY: Prepping for heroku deployment
 ### Commit #92
 DEPLOY: Prepping for heroku deployment
     - Added engines to the server package.json file
+
+### Commit #93
+DEPLOY: Prepping for heroku deployment
+    - Updated the frontend package.json file 
+    - Installed serve -s
+    - New start command is npm run dev
+    - Update to the README.md file
+        - Updated the installation instructions
+        - Added a startup instruction section 

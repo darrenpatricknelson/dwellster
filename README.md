@@ -168,12 +168,21 @@ Some late nights coming up...
 - Pull the code from my github repository
 - To install all the backend packages
     - Open a new terminal
-    - cd server
     - npm install (OR) npm ci (for a clean install)
 - To install all the frontend packages
     - Open a new terminal
     - cd client
     - npm install (OR) npm ci (for a clean install)
+
+### Starting the apps
+- Once all packages are installed: 
+- Backend
+    - Open a new terminal
+    - npm run dev
+- Frontend
+    - Open a new terminal
+    - cd client
+    - npm run dev
 
 ### Security measures
 - I have used a .env file to hide API keys and my mongoDB URI
