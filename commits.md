@@ -596,3 +596,7 @@ UPDATE: Update to index.html file
 ### Commit #91
 DEPLOY: Prepping for heroku deployment
     - Update to procfile
+
+### Commit #92
+DEPLOY: Prepping for heroku deployment
+    - Added engines to the server package.json file
