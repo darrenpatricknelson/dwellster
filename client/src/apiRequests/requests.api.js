@@ -11,7 +11,7 @@ export const getUserDetails = async (token) => {
 
 // this request is made when a user signs in or registers 
 export const userPostRequest = async (payload, url) => {
-    const response = await fetch(`/api/${url}`, {
+    const response = await fetch(`/api${url}`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

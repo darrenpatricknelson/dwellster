@@ -616,3 +616,8 @@ DEPLOY: Prepping for heroku deployment
 ### Commit #95
 DEPLOY: Prepping for heroku deployment
     - Made devDependencies dependencies and change the start script for my backend
+
+### Commit #96
+BUG: Fixed a bug in my login apiRequest
+    - My userPostRequest in the frontend had 1 to many ' / ' in the request
+    - Removed it and will redeploy
