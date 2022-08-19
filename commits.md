@@ -609,3 +609,6 @@ DEPLOY: Prepping for heroku deployment
     - Update to the README.md file
         - Updated the installation instructions
         - Added a startup instruction section 
+
+### Commit #94
+DEPLOY: Prepping for heroku deployment

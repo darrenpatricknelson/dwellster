@@ -33,6 +33,7 @@ app.use((req, res, next) => {
     next();
 });
 
+const PORT = process.env.PORT || 3001;
 // connect to db
 mongoose
     .connect(process.env.MONGO_URI, {
@@ -41,7 +42,6 @@ mongoose
     })
     .then(() => {
         // listening on port
-        const PORT = process.env.PORT || 3001;
         app.listen(PORT, () => {
             console.log(`Connected to DB and listening on port ${PORT}!`);
         });

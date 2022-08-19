@@ -191,7 +191,7 @@ Some late nights coming up...
 - I have not successfully deployed my app yet. I have requested and am still waiting to receive help from a reviewer 
 
 ### Link to my deployed app
-- (Add linked here once deployed)
+- https://dwellster.herokuapp.com/ (deployed app is not functional)
 
 This project was my final capstone project for my HyperionDev fullstack bootcamp.
 This project has been planned and wireframed. Those plans are in the Business Requirements folder.
