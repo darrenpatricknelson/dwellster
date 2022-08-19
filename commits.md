@@ -592,3 +592,7 @@ REBUILD: Rebuilt folder structure again
 ### Commit #90
 UPDATE: Update to index.html file
     - Added a different route to the favicons in the index.html file
+
+### Commit #91
+DEPLOY: Prepping for heroku deployment
+    - Update to procfile
