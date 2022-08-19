@@ -588,3 +588,7 @@ REBUILD: Rebuilt folder structure again
     - Client folder remains the same
     - Documentation folder ignored by git commits
     - commits.md file is pushed to github
+
+### Commit #90
+UPDATE: Update to index.html file
+    - Added a different route to the favicons in the index.html file
