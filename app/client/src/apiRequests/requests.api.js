@@ -2,7 +2,7 @@
 // user authentication requests 
 // get user details - This request is made when the component mounts
 export const getUserDetails = async (token) => {
-    const res = await fetch(`/auth/user/${token}`);
+    const res = await fetch(`/api/auth/user/${token}`);
     const data = await res.json();
 
     return data.user[0];
@@ -11,7 +11,7 @@ export const getUserDetails = async (token) => {
 
 // this request is made when a user signs in or registers 
 export const userPostRequest = async (payload, url) => {
-    const response = await fetch(url, {
+    const response = await fetch(`/api/${url}`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -30,7 +30,7 @@ export const userPostRequest = async (payload, url) => {
 // community api requests
 // fetching a community (SINGULAR)
 export const getCommunity = async (title) => {
-    const response = await fetch(`/community/fetch/blogs/${title}`);
+    const response = await fetch(`/api/community/fetch/blogs/${title}`);
     const data = await response.json();
 
     return data;
@@ -39,7 +39,7 @@ export const getCommunity = async (title) => {
 
 // fetching a community (PLURAL)
 export const getCommunities = async (token) => {
-    const response = await fetch(`/community/fetch/${token}`);
+    const response = await fetch(`/api/community/fetch/${token}`);
     const data = await response.json();
 
     return data;
@@ -48,7 +48,7 @@ export const getCommunities = async (token) => {
 
 // admin creating a new community
 export const createNewCommunity = async (payload) => {
-    const response = await fetch('/community/create', {
+    const response = await fetch('/api/community/create', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -63,7 +63,7 @@ export const createNewCommunity = async (payload) => {
 
 // user joining a community
 export const joinCommunity = async (payload) => {
-    const response = await fetch('/community/join', {
+    const response = await fetch('/api/community/join', {
         method: 'PATCH',
         headers: {
             'content-type': 'application/json'
@@ -82,7 +82,7 @@ export const joinCommunity = async (payload) => {
 // Blogs api requests
 // adding a new blog
 export const addNewBlog = async (payload) => {
-    const response = await fetch(`/blog/create`, {
+    const response = await fetch(`/api/blog/create`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -97,7 +97,7 @@ export const addNewBlog = async (payload) => {
 
 // deleting a blog
 export const deleteBlog = async (payload) => {
-    const response = await fetch(`/blog/delete`, {
+    const response = await fetch(`/api/blog/delete`, {
         method: 'DELETE',
         headers: {
             'content-type': 'application/json'

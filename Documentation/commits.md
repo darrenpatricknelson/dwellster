@@ -567,3 +567,16 @@ DEPLOY: Prepping for deployment
     - Removed heroku postbuild script
     - Added code for vercel
     - Added vercel.json
+
+### Commit #88
+REBUILD: Massive rebuild
+    - Rebuilt the folder structure for heroku deployment 
+        - Moved the frontend and backend folders into an app folder 
+        - The frontend is still in the client folder
+        - The backend is now in the root app folder 
+    - Added heroku postbuild script to the server package.json file
+    - Reworked the routes in the backend and frontend
+        - Added '/api' to the beginning of the api request routes 
+        - This is needed for heroku
+    - Deleted the vercel.json file
+    - Delete 'homepage' from the server package.json

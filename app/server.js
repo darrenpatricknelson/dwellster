@@ -55,22 +55,21 @@ mongoose
 // authRoute for authentication
 // - This route works hand in hand with the user model and controller
 // app.use('/auth', path.join(__dirname, 'routes', 'auth.routes.js'));
-app.use('/auth', authRouter);
+app.use('/api/auth', authRouter);
 // communityRouter
 // - This route works hand in hand with the community model and controller
 // app.use('/community', path.join(__dirname, 'routes', 'community.routes.js'));
-app.use('/community', communityRouter);
+app.use('/api/community', communityRouter);
 // blogRoute
 // - This route works hand in hand with the blogs model and controller
 // app.use('/blog', path.join(__dirname, 'routes', 'blog.routes.js'));
-app.use('/blog', blogRouter);
-
+app.use('/api/blog', blogRouter);
 
 // static files (build of my frontend)
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')));
+    app.use(express.static(path.join(__dirname, './client/build')));
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'),
+        res.sendFile(path.resolve(__dirname, './client', 'build', 'index.html'),
             (err) => {
                 if (err) {
                     res.status(500).json({
