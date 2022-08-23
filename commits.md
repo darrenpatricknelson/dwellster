@@ -622,5 +622,8 @@ BUG: Fixed a bug in my login apiRequest
     - My userPostRequest in the frontend had 1 to many ' / ' in the request
     - Removed it and will redeploy
 
-### Commit #96
+### Commit #97
 DELETE: Deleted unused file (Community.js component)
+
+### Commit #98
+UPDATE: Update to git ignore files

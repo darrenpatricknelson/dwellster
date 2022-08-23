@@ -1,7 +1,8 @@
 /.vscode
-/Documentation/MODERATOR.txt
 /Documentation/SubmissionCriteria.txt
 /Documentation/todo.txt
+/MODERATOR.txt
+/Links.txt
 /.env
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
