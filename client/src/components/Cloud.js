@@ -1,4 +1,4 @@
-// stlyes 
+// styles 
 import styles from '../styles/Cloud.module.css';
 
 const Cloud = ({ children }) => {

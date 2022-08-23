@@ -621,3 +621,6 @@ DEPLOY: Prepping for heroku deployment
 BUG: Fixed a bug in my login apiRequest
     - My userPostRequest in the frontend had 1 to many ' / ' in the request
     - Removed it and will redeploy
+
+### Commit #96
+DELETE: Deleted unused file (Community.js component)
