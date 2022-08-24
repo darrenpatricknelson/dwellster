@@ -2,7 +2,7 @@
 import React from 'react';
 
 // styles
-import '../styles/loading.css';
+// Loading.css
 
 export default function Loading() {
 

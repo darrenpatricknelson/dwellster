@@ -627,3 +627,12 @@ DELETE: Deleted unused file (Community.js component)
 
 ### Commit #98
 UPDATE: Update to git ignore files
+
+### Commit #99 
+REBUILD: Massive css rebuild
+    - Converting all css modules to normal css files 
+    - Changed all classNames from {styles.name} to {'name'}
+    - Removed all the 'import '../styles/cssFile.css' from all components and pages
+    - Imported all the individual css files into the index.css file
+    - index.css file is imported in the index.js files
+    - The reason all this had to be done is because jest was failing tests due to imported 

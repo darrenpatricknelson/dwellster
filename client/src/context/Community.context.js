@@ -1,4 +1,5 @@
 // imports 
+import React from 'react';
 // we will be using createContext for global props as well as useReducer to update the state reactively  
 import { createContext, useReducer } from 'react';
 

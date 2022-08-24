@@ -1,4 +1,5 @@
-.container {
+/* styling for the add new blog cloud */
+.cloud_container {
   width: 1000px;
   height: 1000px;
   border-radius: 25%;
@@ -7,7 +8,7 @@
   z-index: 2;
 }
 
-.content {
+.cloud_content {
   max-height: 950px;
   border-radius: 20%;
   position: absolute;
@@ -20,7 +21,7 @@
   z-index: 1;
 }
 
-.form {
+.cloud_form {
   width: 700px;
   max-height: 800px;
   margin: 50px auto;

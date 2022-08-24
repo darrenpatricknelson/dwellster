@@ -7,7 +7,7 @@ import { useUserContext } from '../hooks/useUserContext.js';
 import { Warning } from './Buttons.js';
 
 // styles
-import styles from '../styles/Header.module.css';
+// Header.css
 
 const Header = ({ page }) => {
     const { user } = useUserContext();
@@ -27,15 +27,15 @@ const Header = ({ page }) => {
             </Helmet>
 
             {/* The header bar */}
-            <div className={styles.header}>
-                <h1 className={styles.header_heading}>Dwellster - come Dwell with me</h1>
-                <div className={styles.header_info}>
-                    <div className={styles.header_admin}>
+            <div className={'header'}>
+                <h1 className={'header_heading'}>Dwellster - come Dwell with me</h1>
+                <div className={'header_info'}>
+                    <div className={'header_admin'}>
                         {communityTitle && <h3>{communityTitle}</h3>}
                     </div>
-                    <div className={styles.header_user}>
-                        <h3>Welcome {`${user.name} ${user.surname}`}</h3>
-                        <div className={styles.button}>
+                    <div className={'header_user'}>
+                        <h3 className={'header_username'}>Welcome {`${user.name} ${user.surname}`}</h3>
+                        <div className={'header_button'}>
                             <a href="/">
                                 <Warning onClick={handleLogout} text='Logout' />
                             </a>

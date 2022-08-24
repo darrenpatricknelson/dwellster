@@ -11,7 +11,7 @@ import Loading from '../components/Loading.js';
 import { getCommunities } from '../apiRequests/requests.api.js';
 
 // styles 
-import styles from '../styles/Community.module.css';
+// Community.css
 
 export default function CommunityPage({ isLoggedIn }) {
     const { community, comDispatch } = useCommunityContext();
@@ -56,13 +56,11 @@ export default function CommunityPage({ isLoggedIn }) {
     if (!isLoggedIn) return <Navigate to="/authentication" />;
     return (
         <Layout page='Community'>
-
-
             {community ? community.map(com => {
                 // I'm actually lazy and didn't want to style the bullets here 
                 return <ul><a key={com.title} href={`/home/community/${com.title}`} > {com.title}</a></ul>;
             }) : isLoading &&
-            <div className={styles.loading_state}>
+            <div className={'loading_state'}>
                 <Loading />
             </div>}
             {noCommunity &&

@@ -1,6 +1,6 @@
 /* styling the blogs */
 /* shared styles */
-.card {
+.blogs_card {
   padding: 20px 15px;
   margin: 10px 0;
   background-color: var(--aero-blue);
@@ -8,14 +8,16 @@
   border-radius: 1rem;
 }
 
-.header {
+.blogs_header {
+  min-height: 100px !important;
   width: 100%;
   text-align: center;
   min-height: 60px;
+  border-radius: 1rem;
   border-bottom: 1px solid #000;
 }
 
-.body {
+.blogs_body {
   margin: 20px 15px;
   border: 1px solid;
   height: 200px;
@@ -24,19 +26,15 @@
   text-overflow: ellipsis ellipsis;
 }
 
-.blog_interaction {
-  /*  */
-}
-
 /* add new blog */
-.blog_title {
+.add_new_blog_title {
   width: 100%;
   border: 1px solid grey;
   margin-bottom: 20px;
   padding: 20px;
   background-color: var(--aero-blue);
 }
-.textarea {
+.add_new_blog_textarea {
   width: 100%;
   padding: 20px;
   background-color: var(--aero-blue);
@@ -55,7 +53,7 @@
   text-align: center;
   color: #4bb543;
 }
-.link {
+.add_new_blog_link {
   margin: 0 5px;
   text-decoration: underline;
 }

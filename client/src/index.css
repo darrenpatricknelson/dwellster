@@ -54,3 +54,36 @@ body {
   /* dark grouping */
   --smokey-black: #070600; /* Header text */
 }
+
+/* styles for the authentication page */
+@import url('./styles/Authentication.css');
+
+/* styling the blogs */
+@import url('./styles/Blogs.css');
+
+/* all the buttons */
+@import url('./styles/Buttons.css');
+
+/* styling for the add new blog cloud */
+@import url('./styles/Cloud.css');
+
+/* styles for the blog container */
+@import url('./styles/Community.css');
+
+/* styles for the Header component */
+@import url('./styles/Header.css');
+
+/* styles for the homepage */
+@import url('./styles/Home.css');
+
+/* join community styles */
+@import url('./styles/Join.css');
+
+/* layout styles */
+@import url('./styles/Layout.css');
+
+/* styles for the loading animation */
+@import url('./styles/Loading.css');
+
+/* styles for the navbar */
+@import url('./styles/Navbar.css');

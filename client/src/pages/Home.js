@@ -7,8 +7,7 @@ import { useUserContext } from '../hooks/useUserContext.js';
 import Layout from '../components/Layout.js';
 
 // styles 
-import styles from '../styles/Home.module.css';
-
+// Home.css
 
 export default function Home({ isLoggedIn }) {
     const { user } = useUserContext();
@@ -16,7 +15,7 @@ export default function Home({ isLoggedIn }) {
     if (!isLoggedIn) return <Navigate to="/authentication" />;
     return (
         <Layout page='Home'>
-            <div className={styles.home_page}>
+            <div className={'home_page'}>
                 <h1>Welcome to Dwellster! A community friendly blog like no other.</h1>
                 <p>View your communities -&gt; <a href="/home/community">Community</a> </p>
                 {user.isAdmin ?

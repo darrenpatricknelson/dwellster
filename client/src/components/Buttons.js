@@ -1,19 +1,19 @@
 // This component will be used to created and export several types of buttons
 
 // styles
-import styles from '../styles/Buttons.module.css';
+// Buttons.css
 
 // Warning button
 export const Primary = ({ text, ...props }) => {
     return (
-        <button {...props} className={`${styles.button} ${styles.primary}`}>{text}</button>
+        <button {...props} className={`button_ button_primary`}>{text}</button>
     );
 };
 
 // Interaction buttons (capri blue inner with dodger blue border)
 export const Interaction = ({ text, ...props }) => {
     return (
-        <button {...props} className={`${styles.button} ${styles.interaction}`}>
+        <button {...props} className={`button_ button_interaction`}>
             {text}
         </button>
     );
@@ -22,7 +22,7 @@ export const Interaction = ({ text, ...props }) => {
 // caution button (paradise pink inner with orange pantone border)
 export const Caution = ({ text, ...props }) => {
     return (
-        <button {...props} className={`${styles.button} ${styles.caution}`}>
+        <button {...props} className={`button_ button_caution`}>
             {text}
         </button>
     );
@@ -32,14 +32,14 @@ export const Caution = ({ text, ...props }) => {
 // Warning button
 export const Warning = ({ text, ...props }) => {
     return (
-        <button {...props} className={`${styles.button} ${styles.warning}`}>{text}</button>
+        <button {...props} className={`button_ button_warning`}>{text}</button>
     );
 };
 
 // Warning button
 export const Inactive = ({ text, ...props }) => {
     return (
-        <button {...props} className={`${styles.button} ${styles.inactive}`}>{text}</button>
+        <button {...props} className={`button_ button_inactive`}>{text}</button>
     );
 };
 

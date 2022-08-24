@@ -1,11 +1,10 @@
-/* home page */
-
-.container {
+/* layout styles */
+.layout_container {
   max-width: 1800px;
   margin: 30px auto;
 }
 
-.blog_container {
+.layout_blog_container {
   min-height: 100%;
   padding: 20px;
   min-width: 600px;
@@ -13,7 +12,7 @@
   border: 1px dotted;
 }
 
-.container_Body {
+.layout_container_Body {
   display: grid;
   grid-template-columns: 12% 86%;
   gap: 2%;

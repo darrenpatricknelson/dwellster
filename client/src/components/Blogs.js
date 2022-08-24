@@ -3,20 +3,20 @@
 // CARD (a summary) and BLOG (the full blog) 
 
 // styles
-import styles from '../styles/Blogs.module.css';
+// Blog.css
 
 
 // Blog Card
 export const Card = ({ isAdmin, blog, button }) => {
     return (
-        <div className={styles.card}>
-            <div className={styles.header}>
+        <div className={'blogs_card'}>
+            <div className={'blogs_header'}>
                 <h3>{blog.title}</h3>
             </div>
-            <div className={styles.body}>
+            <div className={'blogs_body'}>
                 <p>{blog.description}</p>
             </div>
-            <div className={styles.blog_interaction}>
+            <div>
                 <p>{blog.likes.length} likes/ {blog.comments.length} comments</p>
             </div>
             {isAdmin && button}

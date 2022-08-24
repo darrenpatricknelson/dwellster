@@ -10,7 +10,7 @@ import { Inactive, Primary } from '../components/Buttons.js';
 
 
 // styles 
-import styles from '../styles/auth.module.css';
+// Authentication.css
 
 // api request handlers
 import { userPostRequest } from '../apiRequests/requests.api.js';
@@ -179,27 +179,27 @@ const Authentication = ({ handleAuth, isLoggedIn }) => {
 
     if (isLoggedIn) return <Navigate to="/home" />;
     return (
-        <div className={styles.container}>
-            <div className={styles.auth_page}>
+        <div className={'auth_container'}>
+            <div className={'auth_page'}>
                 <h1>Dwellster - come Dwell with us</h1>
 
-                <div className={styles.form}>
+                <div className={'auth_form'}>
                     <form>
                         {isLoggingIn && <h3>Log in</h3>}
                         {isSigningUp && <h3>Sign up</h3>}
                         {isSigningUp &&
                             <>
-                                <input className={styles.emailInput} type="email" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
-                                <div className={styles.error}>{nameError}</div>
-                                <input className={styles.emailInput} type="email" placeholder="Surname" value={surname} onChange={(e) => setSurname(e.target.value)} />
-                                <div className={styles.error}>{surnameError}</div>
+                                <input className={'auth_user_input'} type="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                                <div className={'auth_error'}>{nameError}</div>
+                                <input className={'auth_user_input'} type="surname" placeholder="Surname" value={surname} onChange={(e) => setSurname(e.target.value)} />
+                                <div className={'auth_error'}>{surnameError}</div>
                             </>
                         }
 
 
-                        <input className={styles.emailInput} type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <div className={styles.error}>{emailError}</div>
-                        <div className={styles.passwordInput}>
+                        <input className={'auth_email_input'} type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <div className={'auth_error'}>{emailError}</div>
+                        <div className={'auth_password_input'}>
                             <input type={type} placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
                             <button onClick={(e) => {
                                 e.preventDefault();
@@ -210,42 +210,42 @@ const Authentication = ({ handleAuth, isLoggedIn }) => {
                                 }
                             }}><FontAwesomeIcon icon={faEye} /></button>
                         </div>
-                        <div className={styles.error}>{passwordError}</div>
+                        <div className={'auth_error'}>{passwordError}</div>
 
                         {isSigningUp &&
-                            <div className={styles.checkbox}>
+                            <div className={'auth_checkbox'}>
                                 <input type="checkbox" name="agree" id="agree" onClick={() => setAdmin(prev => !prev)} />{' '}
                                 <label htmlFor="checkbox">Would you like to be an Admin?</label>
                             </div>
                         }
 
                         {/* a loading state animation */}
-                        {isLoading ? <div className={styles.loading}>
+                        {isLoading ? <div className={'auth_loading'}>
                             <div></div>
                             <div></div>
                             <div></div>
                             <div></div>
                             <div></div>
                         </div> :
-                            <div className={styles.buttons}>
+                            <div className={'auth_buttons'}>
                                 {/* depending on the state, certain buttons will be active that contain certain functions */}
                                 {/* if the user is trying to log in */}
                                 {isLoggingIn &&
-                                    <div className={styles.auth_buttons}>
-                                        <div className={styles.auth_primary}>
+                                    <div className={'auth_buttons'}>
+                                        <div>
                                             <Primary onClick={(e) => handleSubmit(e, 'login')} text='Login' />
                                         </div>
-                                        <div className={styles.auth_inactive}>
+                                        <div>
                                             <Inactive onClick={handleState} text='Sign up' />
                                         </div>
                                     </div>}
                                 {/* if the user is trying to signup */}
                                 {isSigningUp &&
-                                    <div className={styles.auth_buttons}>
-                                        <div className={styles.auth_inactive}>
+                                    <div className={'auth_buttons'}>
+                                        <div>
                                             <Inactive onClick={handleState} text='Login' />
                                         </div>
-                                        <div className={styles.auth_primary}>
+                                        <div>
                                             <Primary onClick={(e) => handleSubmit(e, 'signup')} text='Sign up' />
                                         </div>
                                     </div>
@@ -257,10 +257,10 @@ const Authentication = ({ handleAuth, isLoggedIn }) => {
                 </div>
                 <div >
                     {/* error validation */}
-                    {errorVal && <h4 className={`${styles.errorVal} ${styles.error}`}>{errorVal}</h4>}
+                    {errorVal && <h4 className={`auth_errorVal auth_error`}>{errorVal}</h4>}
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

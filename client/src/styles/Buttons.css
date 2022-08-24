@@ -1,5 +1,5 @@
 /* all the buttons */
-.button {
+.button_ {
   width: 100%;
   border: none;
   padding: 6px 12px;
@@ -13,45 +13,45 @@
 
 /* Colours */
 /* Primary */
-.primary {
+.button_primary {
   background-color: var(--dark-pastel);
   border: 1px solid var(--sap-green);
 }
 
-.primary:hover {
+.button_primary:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
 /* interaction */
-.interaction {
+.button_interaction {
   background-color: var(--capri);
   border: 1px solid var(--dodger-blue);
 }
 
-.interaction:hover {
+.button_interaction:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
 /* caution */
-.caution {
+.button_caution {
   background-color: var(--paradise-pink);
   border: 1px solid var(--orange-pantone);
 }
 
-.caution:hover {
+.button_caution:hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
 /* warning */
-.warning {
+.button_warning {
   background-color: #dd1d1ab2;
   border: 1px solid var(--maximum-red);
 }
 
-.warning:hover {
+.button_warning:hover {
   cursor: pointer;
   background-color: var(--maximum-red);
 }

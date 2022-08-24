@@ -18,8 +18,8 @@ import Layout from '../components/Layout.js';
 import { deleteBlog, getCommunity } from '../apiRequests/requests.api.js';
 
 // styles 
-import blogStyles from '../styles/Blogs.module.css';
-import styles from '../styles/Community.module.css';
+// Blogs.css
+// Community.css
 
 export default function CommunityPage({ isLoggedIn }) {
     const { communityTitle } = useParams();
@@ -89,13 +89,13 @@ export default function CommunityPage({ isLoggedIn }) {
     return (
         <Layout page='Community'>
             {user.isAdmin &&
-                <div className={styles.button_AddBlog}>
+                <div className={'community_button_AddBlog'}>
                     <a href={`/home/community/add/${communityTitle}`}>
                         <Primary text='What are you thinking at the moment? Create a new Blog post here!' />
                     </a>
                 </div>}
 
-            <div className={styles.clear_Float}>
+            <div className={'community_clear_Float'}>
                 {!community || community.blogs.length === 0 ? <h3>There are currently no available blogs in this community</h3> :
 
                     <Container>
@@ -115,8 +115,8 @@ export default function CommunityPage({ isLoggedIn }) {
                     </Container>
 
                 }
-                <div className={blogStyles.errorVal}>{errorVal}</div>
-                <div className={blogStyles.successVal}>{successVal}</div>
+                <div className={'errorVal'}>{errorVal}</div>
+                <div className={'successVal'}>{successVal}</div>
 
             </div>
 

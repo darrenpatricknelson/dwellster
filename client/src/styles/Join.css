@@ -1,14 +1,15 @@
-.container {
+/* join community styles */
+.join_container {
   width: 600px;
   margin: 0 80% 0 20%;
   text-align: center;
 }
-.form {
+.join_form {
   width: 400px;
   margin: auto;
 }
 
-.form form input {
+.join_form form input {
   padding: 10px;
   width: 400px;
   margin-bottom: 20px;
@@ -16,20 +17,20 @@
   border-radius: 5px;
 }
 
-.button {
+.join_button {
   width: 100px;
   margin: auto;
 }
-.errorVal {
+.join_errorVal {
   margin: 20px auto 0;
   text-align: center;
   color: #e34974;
 }
-.successVal {
+.join_successVal {
   margin: 20px auto 0;
   text-align: center;
   color: #4bb543;
 }
-.link {
+.join_link {
   text-decoration: underline;
 }

@@ -11,14 +11,14 @@ import Layout from '../components/Layout.js';
 import { addNewBlog } from '../apiRequests/requests.api.js';
 
 // import 
-import styles from '../styles/Blogs.module.css';
+// Blogs.css
 
 
 const AddNewBlog = ({ isLoggedIn }) => {
     const { communityTitle } = useParams();
 
     const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('https://www.lipsum.com/');
+    const [description, setDescription] = useState('');
     const [successVal, setSuccessVal] = useState('');
     const [errorVal, setErrorVal] = useState('');
 
@@ -71,14 +71,14 @@ const AddNewBlog = ({ isLoggedIn }) => {
         <Layout page='Add new Blog'>
             <Cloud>
                 <form onSubmit={submitBlog}>
-                    <input className={styles.blog_title} type="text" placeholder='What is the title of your blog?' value={title} onChange={(e) => setTitle(e.target.value)} />
-                    <textarea className={styles.textarea} placeholder="What are your thoughts?" value={description} onChange={(e) => setDescription(e.target.value)} />
+                    <input className={'add_new_blog_title'} type="text" placeholder='What is the title of your blog?' value={title} onChange={(e) => setTitle(e.target.value)} />
+                    <textarea className={'add_new_blog_textarea'} placeholder="What are your thoughts?" value={description} onChange={(e) => setDescription(e.target.value)} />
                     <Primary text={`Post your blog`} />
-                    <div className={styles.errorVal}><h5>{errorVal}</h5></div>
-                    {successVal && <div className={styles.successVal}>
+                    <div className={'errorVal'}><h5>{errorVal}</h5></div>
+                    {successVal && <div className={'successVal'}>
                         <h5>{successVal}</h5>
                         <p>You can another another blog post or head back to the{' '}
-                            <span className={styles.link}><a href={`/home/community/${communityTitle}`}>blogs page</a></span></p>
+                            <span className={'add_new_blog_link'}><a href={`/home/community/${communityTitle}`}>blogs page</a></span></p>
                     </div>}
 
                 </form>

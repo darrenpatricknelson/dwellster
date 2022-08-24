@@ -4,26 +4,26 @@
 import { useUserContext } from '../hooks/useUserContext.js';
 
 // styles
-import buttonStyles from '../styles/Buttons.module.css';
-import styles from '../styles/Navbar.module.css';
+// Buttons.css
+// Navbar.css
 
 const Navbar = () => {
     const { user } = useUserContext();
 
     return (
-        <div className={styles.navbar}>
+        <div className={'navbar'}>
 
-            <div className={styles.buttons}>
-                <div className={styles.community_button}>
+            <div className={'navbar_buttons'}>
+                <div className={'navbar_community_button'}>
                     <a href="/home/community">
-                        <div className={`${styles.nav_links} ${buttonStyles.button} ${buttonStyles.caution}`}>
+                        <div className={`navbar_links button_ button_caution`}>
                             Community
                         </div>
                     </a>
                 </div>
-                <div className={styles.join_button}>
+                <div className={'navbar_join_button'}>
                     <a href="/home/join">
-                        <div className={`${styles.nav_links} ${buttonStyles.button} ${buttonStyles.interaction}`}>
+                        <div className={`navbar_links button_ button_interaction`}>
                             {user.isAdmin ? 'Create a community' : 'Join a community'}
                         </div>
                     </a>

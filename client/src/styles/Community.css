@@ -1,10 +1,10 @@
 /* styles for the blog container */
 
-.button_AddBlog {
+.community_button_AddBlog {
   float: right;
   margin-bottom: 20px;
 }
-.clear_Float {
+.community_clear_Float {
   clear: both;
 }
 

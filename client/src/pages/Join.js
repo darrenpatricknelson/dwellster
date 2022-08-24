@@ -11,7 +11,7 @@ import Layout from '../components/Layout.js';
 import { createNewCommunity, joinCommunity } from '../apiRequests/requests.api.js';
 
 // styles 
-import styles from '../styles/Join.module.css';
+// Join.css
 
 export default function Join({ isLoggedIn }) {
     const { user } = useUserContext();
@@ -97,32 +97,32 @@ export default function Join({ isLoggedIn }) {
     if (!isLoggedIn) return <Navigate to="/authentication" />;
     return (
         <Layout page='Community'>
-            <div className={styles.container}>
+            <div className={'join_container'}>
                 {user.isAdmin ? <h1>Create a new community</h1> : <h1>Join a new community</h1>}
-                <div className={styles.form}>
+                <div className={'join_form'}>
                     {user.isAdmin ?
                         <form onSubmit={handleCreateCommunity}>
                             <input type="text" placeholder="Title of your community" value={title} onChange={(e) => setTitle(e.target.value)} />
                             <input type="text" placeholder="Community key" value={communityKey} onChange={(e) => setCommunityKey(e.target.value)} />
-                            <div className={styles.button}>
-                                <div className={styles.button}></div>
+                            <div className={'join_button'}>
+                                <div className={'join_button'}></div>
                                 <Primary text={`Submit`} />
                             </div>
-                            <div className={styles.errorVal}>{errorVal}</div>
-                            <div className={styles.successVal}>
+                            <div className={'join_errorVal'}>{errorVal}</div>
+                            <div className={'join_successVal'}>
                                 {successVal}<br />
                                 <p>Head to the{' '}
-                                    <span className={styles.link}><a href={`/home/community/`}>community page</a></span> {' '}to check it out!</p>
+                                    <span className={'join_link'}><a href={`/home/community/`}>community page</a></span> {' '}to check it out!</p>
                             </div>
                         </form>
                         :
                         <form onSubmit={handleJoinCommunity}>
                             <input type="text" placeholder="Enter the community key provided by your blogger..." value={communityKey} onChange={(e) => setCommunityKey(e.target.value)} />
-                            <div className={styles.button}>
+                            <div className={'join_button'}>
                                 <Primary text={`Submit`} />
                             </div>
-                            <div className={styles.errorVal}>{errorVal}</div>
-                            <div className={styles.successVal}>{successVal}</div>
+                            <div className={'join_errorVal'}>{errorVal}</div>
+                            <div className={'join_successVal'}>{successVal}</div>
                         </form>
                     }
                 </div>
