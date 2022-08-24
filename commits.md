@@ -652,3 +652,6 @@ TEST: Writing tests
 
 ### Commit #101
 BUG: Removing test script from package.json
+
+### Commit #102
+TEST: Created test for backend 
