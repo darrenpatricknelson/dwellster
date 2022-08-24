@@ -649,3 +649,6 @@ TEST: Writing tests
         - Installed mocha and chai
         - Added mocha test script to package.json
         - Wrote a backend test called user.test.js
+
+### Commit #101
+BUG: Removing test script from package.json
