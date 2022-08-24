@@ -1,4 +1,6 @@
 // This component will be used to created and export several types of buttons
+// imports 
+import React from "react";
 
 // styles
 // Buttons.css

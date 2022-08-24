@@ -1,4 +1,5 @@
 // imports
+import React from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from 'react-router-dom';
 import { useUserContext } from '../hooks/useUserContext.js';
@@ -34,7 +35,7 @@ const Header = ({ page }) => {
                         {communityTitle && <h3>{communityTitle}</h3>}
                     </div>
                     <div className={'header_user'}>
-                        <h3 className={'header_username'}>Welcome {`${user.name} ${user.surname}`}</h3>
+                        {user && <h3 className={'header_username'}>Welcome {`${user.name} ${user.surname}`}</h3>}
                         <div className={'header_button'}>
                             <a href="/">
                                 <Warning onClick={handleLogout} text='Logout' />

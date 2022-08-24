@@ -636,3 +636,16 @@ REBUILD: Massive css rebuild
     - Imported all the individual css files into the index.css file
     - index.css file is imported in the index.js files
     - The reason all this had to be done is because jest was failing tests due to imported 
+
+### Commit #100
+TEST: Writing tests
+    - Importing React in all components and pages
+    - Frontend
+        - Snapshot test
+            - Wrote a snapshot test for the App component
+        - Unit test for the frontend 
+            - Wrote a Unit test for the Header component
+    - Backend 
+        - Installed mocha and chai
+        - Added mocha test script to package.json
+        - Wrote a backend test called user.test.js
